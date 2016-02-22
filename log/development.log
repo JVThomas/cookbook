@@ -3567,3 +3567,202 @@ Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-22 11:02:12 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 11:14:45 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 734ms (Views: 683.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-22 11:14:48 -0500
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-22 11:14:49 -0500
+
+
+Started GET "/users/auth/facebook/callback?code=AQCAYfaxY2RLSpq0wrLb1u-E7l_vuXlv0YYfmK0j0bPO0s8I57LKCyiABbA7fReDaJXNiCK9QCEotGwW55nkVXPQKuAtkhfT-HLKlEKcgHc6aGt9UAAanfX6ipUGn0fbsVj0qhqHCxoiYe1ghs_7PQDY7Zz-UmhAcrEpcpAnFlAaQoVkFlcFjKCtAis6GUKOLWV0u7IbpbPB5RBJtj7e9Ol6sLfthahorYMpd4s5aYqZpNcjt-j0eXDcpk0YKCxQQG1vYWvjQ9V49E429Dwnt7Kc1DtERkQYihn21MQfwdWJHj23hhjgue5wj08AMSpPnxA&state=cf32022043e0da191fc13cf05634ffad36fbe1a14c3f49d3" for 127.0.0.1 at 2016-02-22 11:14:50 -0500
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCAYfaxY2RLSpq0wrLb1u-E7l_vuXlv0YYfmK0j0bPO0s8I57LKCyiABbA7fReDaJXNiCK9QCEotGwW55nkVXPQKuAtkhfT-HLKlEKcgHc6aGt9UAAanfX6ipUGn0fbsVj0qhqHCxoiYe1ghs_7PQDY7Zz-UmhAcrEpcpAnFlAaQoVkFlcFjKCtAis6GUKOLWV0u7IbpbPB5RBJtj7e9Ol6sLfthahorYMpd4s5aYqZpNcjt-j0eXDcpk0YKCxQQG1vYWvjQ9V49E429Dwnt7Kc1DtERkQYihn21MQfwdWJHj23hhjgue5wj08AMSpPnxA", "state"=>"cf32022043e0da191fc13cf05634ffad36fbe1a14c3f49d3"}
+  [1m[35mUser Load (37.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["uid", "10207566582037016"]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 973ms (ActiveRecord: 38.5ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-02-22 11:14:52 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 108680ms (Views: 112.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-02-22 11:16:46 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14011ms (Views: 39.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-02-22 11:17:00 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1565ms (Views: 35.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-02-22 11:17:01 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 1211ms (Views: 37.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-02-22 11:17:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 888ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-02-22 11:19:25 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 9167ms (Views: 240.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/sign_out" for 127.0.0.1 at 2016-02-22 11:19:34 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"sign_out"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 1579ms (Views: 44.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/ingredients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-22 11:19:35 -0500
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-22 11:20:59 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KXtbpuXfbXL6a34G1IehonJKmCCoY0/2uyKgkrNgqjuOizEVkNWbayAseL3rBPlvQ8bGm4tqtFApnZlKlVD8SQ=="}
+  [1m[35mUser Load (14.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 52ms (ActiveRecord: 15.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 11:21:00 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 242ms (Views: 241.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-22 11:21:06 -0500
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-22 11:21:07 -0500
+
+
+Started GET "/users/auth/facebook/callback?code=AQCPUt5z5sRtfOoH1mfTZujR5E2IM2pstlwTo0CGXJZyXRmwkM3fI41XI0eK7u0Lwt52WJ_Txb0u7S64jD5nFJdm-Yn5jzBg_Kn81qP8s17fh4Qnb59h-SB99FvIWEr44-oPqq3WHxRhQR56CJhLwsVo-35mTbjF1Yt_HX1pecK-MOt-f2xBUQF78dTgWo97qHD-sjQf2P3KYTEzI7K2S0Ekja9vuooZqLvawYKgGea9Yu7HS6b4muDBGL0vdLwrNa98hCRPvhZusDPixTLbjOn352u34m4v-uweaFEAVKA4T4-VM3hn5C1fpfsNV9WuMjk&state=630adc19b78da08233e105f7135b3a8d195a446f625f0116" for 127.0.0.1 at 2016-02-22 11:21:07 -0500
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQCPUt5z5sRtfOoH1mfTZujR5E2IM2pstlwTo0CGXJZyXRmwkM3fI41XI0eK7u0Lwt52WJ_Txb0u7S64jD5nFJdm-Yn5jzBg_Kn81qP8s17fh4Qnb59h-SB99FvIWEr44-oPqq3WHxRhQR56CJhLwsVo-35mTbjF1Yt_HX1pecK-MOt-f2xBUQF78dTgWo97qHD-sjQf2P3KYTEzI7K2S0Ekja9vuooZqLvawYKgGea9Yu7HS6b4muDBGL0vdLwrNa98hCRPvhZusDPixTLbjOn352u34m4v-uweaFEAVKA4T4-VM3hn5C1fpfsNV9WuMjk", "state"=>"630adc19b78da08233e105f7135b3a8d195a446f625f0116"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["uid", "10207566582037016"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (20.7ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-02-22 16:21:08.312416"], ["sign_in_count", 2], ["updated_at", "2016-02-22 16:21:08.313550"], ["id", 1]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 30ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-02-22 11:21:08 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7554ms (Views: 55.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 11:21:19 -0500
+Processing by WelcomeController#home as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered welcome/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-22 11:21:23 -0500
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-22 11:21:23 -0500
+
+
+Started GET "/users/auth/facebook/callback?code=AQAZeCCrwFyxu-JF0punQLbHeXz2bgKluach-qflmm-ZcXtz5zIFwjIz0qd-XPMBc916-lI7aHL5Brl2WqxJdRpM9V9boY4aNcXmXhiixkZXjKpGFn6ZYk4SFqtEWSfStW782Soecw1T_jTdz_NIVSdc4uHCBKMT4DmdVCjAK2O2Tyh0_KecgzOPcvVmn9uOl8PYFVeD580jAcmHR2ez7t5X1muH70bUYy83UGCU8ombpYr3bH9d83gVXVACTHImL4avzgqTdP4kDvjHRdBKifAzou6UunFXGRlhnPCuVumtKXpi9t8dFVTXXyYRKhO4YDI&state=008d9c29a2d0f7be882980a780b0714f68b74a5fa8a0d3b7" for 127.0.0.1 at 2016-02-22 11:21:23 -0500
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQAZeCCrwFyxu-JF0punQLbHeXz2bgKluach-qflmm-ZcXtz5zIFwjIz0qd-XPMBc916-lI7aHL5Brl2WqxJdRpM9V9boY4aNcXmXhiixkZXjKpGFn6ZYk4SFqtEWSfStW782Soecw1T_jTdz_NIVSdc4uHCBKMT4DmdVCjAK2O2Tyh0_KecgzOPcvVmn9uOl8PYFVeD580jAcmHR2ez7t5X1muH70bUYy83UGCU8ombpYr3bH9d83gVXVACTHImL4avzgqTdP4kDvjHRdBKifAzou6UunFXGRlhnPCuVumtKXpi9t8dFVTXXyYRKhO4YDI", "state"=>"008d9c29a2d0f7be882980a780b0714f68b74a5fa8a0d3b7"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["uid", "10207566582037016"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 4ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-02-22 11:21:24 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 3121ms (Views: 37.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-22 11:21:29 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4Xk9fHGLkAlgmNSdNke/Nc/MzCEH6qjoNZq7PTCMVtYHU9W2RKCG/OguhjEkTQhDxmlmMfif9cNTA5/4WohZkg=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 11:21:29 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
