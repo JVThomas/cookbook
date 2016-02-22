@@ -3766,3 +3766,216 @@ Started GET "/" for 127.0.0.1 at 2016-02-22 11:21:29 -0500
 Processing by WelcomeController#home as HTML
   Rendered welcome/home.html.erb within layouts/application (0.9ms)
 Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 12:45:19 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 906ms (Views: 827.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/ingredients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-22 12:45:20 -0500
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-22 12:45:22 -0500
+
+
+Started GET "/users/auth/facebook" for 127.0.0.1 at 2016-02-22 12:45:23 -0500
+
+
+Started GET "/users/auth/facebook/callback?code=AQASVjuyoVT8Q4dDw_1TTvvT_9812ujptWz4t1xl5VGhiRXiuOsTJK9Rj6xaF9lIuI6g3WovA6ddTptoe0au5u1dEgXbaqdP6_tiWTVOVcoSJpDqGcg4pLmV3vBRY1PQk74fYDi86qtbeeoD6Wh_S-YyLSVpikfYQX4xqvFa5t2mE6mYw2PggNc1981WJW73yPjHgyX5SZS2AMijNQUZ0rJ8NnK2hod6vJJ2CHbUtqfd-M2_bLTc3W3vesGoNSMkGE9QN46LgDCAHrZXSOCJIq-wh-oG59iiINspuNGsp2LDBoO2WQ_f_wt9OBTrChzuRy8&state=bd1e0556087494b5be82163878069499afcf335efcd5159f" for 127.0.0.1 at 2016-02-22 12:45:23 -0500
+Processing by Users::OmniauthCallbacksController#facebook as HTML
+  Parameters: {"code"=>"AQASVjuyoVT8Q4dDw_1TTvvT_9812ujptWz4t1xl5VGhiRXiuOsTJK9Rj6xaF9lIuI6g3WovA6ddTptoe0au5u1dEgXbaqdP6_tiWTVOVcoSJpDqGcg4pLmV3vBRY1PQk74fYDi86qtbeeoD6Wh_S-YyLSVpikfYQX4xqvFa5t2mE6mYw2PggNc1981WJW73yPjHgyX5SZS2AMijNQUZ0rJ8NnK2hod6vJJ2CHbUtqfd-M2_bLTc3W3vesGoNSMkGE9QN46LgDCAHrZXSOCJIq-wh-oG59iiINspuNGsp2LDBoO2WQ_f_wt9OBTrChzuRy8", "state"=>"bd1e0556087494b5be82163878069499afcf335efcd5159f"}
+  [1m[35mUser Load (7.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."uid" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["uid", "10207566582037016"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (17.9ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2016-02-22 16:21:08.312416"], ["current_sign_in_at", "2016-02-22 17:45:25.199234"], ["sign_in_count", 3], ["updated_at", "2016-02-22 17:45:25.200515"], ["id", 1]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 959ms (ActiveRecord: 27.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2016-02-22 12:45:26 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 63ms (Views: 62.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-22 12:45:28 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"938Yhft9EqTPjf2pcBJwwif1KaIxBolyX88AhTZJVrYxhp77E1LRVo/hymtmwnQ7dgj3NAl6FJlHurPkOPsdBw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 12:45:28 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 59ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-22 12:45:30 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (32.4ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (213.1ms)
+Completed 200 OK in 282ms (Views: 260.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-22 12:45:39 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xaw1urGlD/8dH8kUldBI6QwCnY8GSfL7+jShoh2oLTmBPyx4jRrgq22KC9itWnSILM25lYCAPBOfn3B2Ji9Oxg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (24.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "test@test.com"]]
+Completed 401 Unauthorized in 46ms (ActiveRecord: 24.3ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xaw1urGlD/8dH8kUldBI6QwCnY8GSfL7+jShoh2oLTmBPyx4jRrgq22KC9itWnSILM25lYCAPBOfn3B2Ji9Oxg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (15.7ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 265ms (Views: 70.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-22 12:45:52 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PuaP9N+pU5onOxqYrdn3lqCqKTFnaFMw2EXI1RQtDW7idZY24xa8zleu2FSVU8v3gGUNK+Ghndi97hkBL6pukQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "test@test.com"]]
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.2ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PuaP9N+pU5onOxqYrdn3lqCqKTFnaFMw2EXI1RQtDW7idZY24xa8zleu2FSVU8v3gGUNK+Ghndi97hkBL6pukQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (14.5ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 146ms (Views: 60.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-22 12:45:55 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (16.9ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/registrations/new.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 75ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-22 12:46:20 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (13.5ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 137ms (Views: 135.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-02-22 12:46:23 -0500
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (9.2ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/registrations/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 93ms (Views: 92.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-02-22 12:46:44 -0500
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dI2CEzHoVxBIpu3Gj4mORcs6EjNsy4evNi3FJTnPwVKoHpvRDVe4RDgzLwq3A7Ik6/U2KeoCSUdThhTxAkiirQ==", "user"=>{"email"=>"mike_jordan@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mike_jordan@test.com' LIMIT 1[0m
+  [1m[35mSQL (11.8ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["email", "mike_jordan@test.com"], ["encrypted_password", "$2a$10$ifgEWVuk40kjbyBno/pxveo7iDmC/nU1UF66b2ZO3G4Agc7Z8DB/u"], ["created_at", "2016-02-22 17:46:44.742538"], ["updated_at", "2016-02-22 17:46:44.742538"]]
+  [1m[36m (13.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["last_sign_in_at", "2016-02-22 17:46:44.770832"], ["current_sign_in_at", "2016-02-22 17:46:44.770832"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2016-02-22 17:46:44.772147"], ["id", 2]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 263ms (ActiveRecord: 27.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-02-22 12:46:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-22 12:46:46 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"otpfjvgM8657ai5cGDIFMUcyYxlZOMMQX8QxV2Ixz91+SUZMxLMc+gv/7JAguDlQZ/1HA9/xDfg6b+CDWbasIg=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 12:46:46 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-02-22 12:46:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/shared/_links.html.erb (16.0ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/devise-3.5.6/app/views/devise/sessions/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 81ms (Views: 79.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-02-22 12:46:57 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u98ttTP5g7B+rbldfOQRMHMi3qZdqSJkuztMbX6ob/lX+8D0agJH3p8XG4COoL6pS2pYdB5aBzVaavhf6PWEyw==", "user"=>{"email"=>"mike_jordan@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["email", "mike_jordan@test.com"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["current_sign_in_at", "2016-02-22 17:46:57.482069"], ["sign_in_count", 2], ["updated_at", "2016-02-22 17:46:57.483093"], ["id", 2]]
+  [1m[35m (20.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 125ms (ActiveRecord: 21.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2016-02-22 12:46:57 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-02-22 12:46:58 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"C7nBRQ0CGRK45xMyx4wXPRnz8DMe5KlskgaZCi6sZYTn/d2UyulGJzgpVCU7gBZw/CodqncIQPVZg4VARd5ntw=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-22 12:46:58 -0500
+Processing by WelcomeController#home as HTML
+  Rendered welcome/home.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 150ms (Views: 149.4ms | ActiveRecord: 0.0ms)
