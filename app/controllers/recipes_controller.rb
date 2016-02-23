@@ -1,16 +1,11 @@
 class RecipesController < ApplicationController
   before_action :require_login, only:[:new, :create, :edit, :update, :destroy]
   before_action :set_recipe, only:[:edit, :update, :show, :destroy]
-  #before_action :recipe_check, only:[:edit, :update, :destroy]
+  before_action :params_check, only:[:new, :create]
 
   def new
-    if !!params[:user_id]
-      if params[:user_id] != current_user.id
-        flash[:alert] = "You are not authorized to do that"
-        redirect_to user_path(current_user)
-      end
-    end
-    @recipe = Recipe.new(user: current_user)
+    params_check
+    @recipe = Recipe.new
   end
 
   def index
@@ -18,8 +13,9 @@ class RecipesController < ApplicationController
   end
 
   def create
-    binding.pry
+    params_check
     @recipe = Recipe.new(recipe_params)
+    @recipe.user = current_user
     if !!params[:add_ingredient]
       add_ingredient
       render :new
@@ -36,7 +32,6 @@ class RecipesController < ApplicationController
   end
     
   def update
-    binding.pry
     authorize(@recipe)
     if !!params[:add_ingredient]
       add_ingredient
@@ -47,6 +42,7 @@ class RecipesController < ApplicationController
   end
 
   def destroy
+    authorize(@recipe)
     @recipe.destroy
     flash[:notice] = "Recipe successfully deleted"
     redirect_to user_path(current_user)
@@ -77,13 +73,6 @@ class RecipesController < ApplicationController
       flash[:notice] = "Ingredient has been added"
     end
 
-    #def recipe_check
-    #  if @recipe.user != nil && @recipe.user != current_user 
-    #    flash[:alert] = "Users can only edit/create/destroy their own recipes"
-    #    redirect_to user_path(current_user)
-    #  end
-    #end
-
     def recipe_save
       if !@recipe.user || @recipe.user == current_user
         @recipe.user ||= current_user
@@ -93,6 +82,15 @@ class RecipesController < ApplicationController
       else
         flash[:alert] = "Users can only save their own recipes"
         redirect_to user_path(@user)
+      end
+    end
+
+    def params_check
+      if !!params[:user_id]
+        if params[:user_id].to_i != current_user.id
+          flash[:alert] = "You are not authorized to do that"
+          redirect_to user_path(current_user)
+        end
       end
     end
 

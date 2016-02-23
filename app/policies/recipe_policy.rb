@@ -1,10 +1,14 @@
 class RecipePolicy < ApplicationPolicy
 
   def edit?
-    record.try(:user) == user
+    record.user == user
   end
 
   def destroy?
-    record.try(:user) == user
+    record.user == user
   end 
+
+  def update?
+    record.user == user
+  end
 end
