@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   def show
-    @users = User.all
+    @user = current_user
   end
 
 end

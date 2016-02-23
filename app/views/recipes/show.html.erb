@@ -1,0 +1,15 @@
+<h1><%= @recipe.name%></h1>
+<h3>By: <%=@recipe.user.email%></h3>
+
+<h3>Description:</h3>
+<h4><%=@recipe.content%></h4>
+
+<h3>Ingredients</h3>
+
+<%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
+    <h4>Name: <%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h4>
+<%end%>
+
+<% if @recipe.user == current_user%>
+  <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete%> 
+<%end%>

@@ -1,0 +1,29 @@
+<h1>Recipe Form</h1>
+<%= form_for(@recipe) do |f|%>
+  <%= f.label :name %> <br>
+  <%= f.text_field :name%><br>
+
+<!--Display all build ingredients here, add a checkbox to remove that ingredient 
+Display by collecting @recipe.recipe_ingredients and list them here
+Add new recipe_ingredient for @recipe, render new or edit for the blank-->
+  <%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
+    <h5>Name: <%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h5>
+  <%end%>
+
+  <h3>Add Ingredient</h3>
+  <%=f.fields_for :recipe_ingredients do |i| %>
+    <%=i.label "Ingredient name:" %> 
+    <%=i.text_field :name %> <br><br>
+    <%=i.label "Quantity:"%> 
+    <%=i.number_field :quantity%> <br>
+  <%end%>
+
+  <h3>Instructions:</h3>
+  <%= f.label :content %> <br>
+  <%= f.text_area :content, rows: 8, cols: 50%> <br>
+
+  
+  <%= f.submit "Add Ingredient", name: :add_ingredient%>
+  <!-- Add a button to remove selected ingredients from recipe -->
+  <%=f.submit "Save Recipe"%>
+<% end%>
