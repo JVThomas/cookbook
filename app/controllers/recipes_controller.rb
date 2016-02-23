@@ -1,13 +1,27 @@
 class RecipesController < ApplicationController
+  before_action :require_login, only:[:new, :create, :edit, :update, :destroy]
+  before_action :user_check, only:[:new, :create, :edit, :update, :destroy,:show]
   before_action :set_recipe, only:[:edit, :update, :show, :destroy]
   before_action :recipe_check, only:[:edit, :update, :destroy]
 
   def new
     @recipe = Recipe.new
+    if !!params[:user_id]  && params[:user] != current_user.id
+      binding.pry
+      flash[:alert] = "Access Denied. Users can only create recipes under their own account"
+      redirect_to user_path(current_user)
+    else
+      binding.pry
+      @recipe.user = current_user
+    end
   end
 
   def index
-    @recipes = Recipe.all
+    if !!params[:user_id]
+      @recipes = User.find(params[:user_id]).recipes
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def create
@@ -24,9 +38,16 @@ class RecipesController < ApplicationController
   end
 
   def edit
+    if !!params[:user_id]
+      if params[:user_id] != current_user.id
+        flash[:alert] = "Access Denied. Users can only edit recipes under their own account"
+        redirect_to user_path(current_user)
+      end
+    end
   end
     
   def update
+    @recipe.update(recipe_params)
     if !!params[:add_ingredient]
       add_ingredient
       render :edit
@@ -49,7 +70,12 @@ class RecipesController < ApplicationController
     end
 
     def set_recipe
-      @recipe = Recipe.find(params[:id])
+      if Recipe.exists?(params[:id])
+        @recipe = Recipe.find(params[:id])
+      else
+        flash[:alert] = "Recipe does not exist"
+        redirect_to user_path(current_user)
+      end
     end
 
     def add_ingredient
@@ -58,10 +84,7 @@ class RecipesController < ApplicationController
     end
 
     def recipe_check
-      if !@recipe 
-        flash[:alert] = "Invalid Recipe Page" 
-        redirect_to root_path
-      elsif @recipe.user != nil && @recipe.user != current_user 
+      if @recipe.user != nil && @recipe.user != current_user 
         flash[:alert] = "Users can only edit/create/destroy their own recipes"
         redirect_to user_path(current_user)
       end
@@ -70,12 +93,25 @@ class RecipesController < ApplicationController
     def recipe_save
       if !@recipe.user || @recipe.user == current_user
         @recipe.user ||= current_user
-        @recipe.save
-        flash[:notice] = "Recipe successfully submitted"
-        redirect_to recipe_path(@recipe)
+        if @recipe.save
+          flash[:notice] = "Recipe successfully submitted"
+          redirect_to recipe_path(@recipe)
+        else
+          flash[:alert] = "Recipe did not save successfully"
+          redirect_to user_path(current_user)
+        end
       else
         flash[:alert] = "Users can only save their own recipes"
-        redirect_to user_path(@user)
+        redirect_to user_path(current_user)
+      end
+    end
+
+    def user_check
+      if !!params[:user_id]
+        if !User.exists?(params[:user_id])
+          flash[:alert] = "User does not exist"
+          redirect_to user_path(current_user)
+        end
       end
     end
 
