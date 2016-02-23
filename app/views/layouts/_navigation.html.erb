@@ -1,0 +1,28 @@
+<div>
+  <div class = "navbar row">
+    
+    <div class = "navbar-logo one-third column">
+      <b>
+      <%if !!current_user%>
+        <%=link_to "COOKBOOK", user_path(current_user)%>   
+      <%else%>
+        <%= link_to "COOKBOOK", root_path%>
+      <%end%>
+      </b>
+    </div>
+    
+    <div class = "navbar-links two-thirds column ">
+      <%if !current_user%>
+        <%= link_to "Recipes", recipes_path%>
+        <%= link_to "Sign Up", new_user_registration_path%>
+        <%= link_to "Log In", new_user_session_path%>
+        <%= link_to "Facebook Log In", user_omniauth_authorize_path(:facebook) %>
+      <%else%>
+        <%=link_to "Welcome #{current_user.email}!", user_path(current_user)%>
+        <%= link_to "Recipes", recipes_path%>
+        <%= link_to "Users", users_path %>
+        <%=link_to "Log Out", destroy_user_session_path, method: :delete if !!current_user%>
+      <%end%>
+    </div> <!--Navbar Links-->
+  </div> <!--Navbar Row -->
+</div>
