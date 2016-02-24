@@ -1,15 +1,33 @@
-<h1><%= @recipe.name%></h1>
-<h3>By: <%=@recipe.user.email%></h3>
+<div>
+  <h1><%= @recipe.name%></h1>
+  <h3>By: <%=link_to "#{@recipe.user_email}", user_path(@recipe.user)%></h3>
 
-<h3>Description:</h3>
-<h4><%=@recipe.content%></h4>
+  <h3>Description:</h3>
+  <h4><%=@recipe.content%></h4>
 
-<h3>Ingredients</h3>
+  <h3>Ingredients</h3>
 
-<%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
-    <h4>Name: <%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h4>
-<%end%>
+  <%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
+      <h4>Name: <%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h4>
+  <%end%>
 
-<% if @recipe.user == current_user%>
-  <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete%> 
-<%end%>
+  <% if @recipe.user == current_user%>
+    <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete%>
+  <%end%>
+</div>
+
+<div>
+  <h1>Comments</h1>
+  <% @recipe.comments.each do |comment| %>
+    <h3> <%= comment.user.email %> Says: </h3>
+    <h4> <%= comment.content %> </h4>
+  <%end%>
+</div>
+
+<div>
+  <%if logged_in?%>
+  <h3>Leave A Comment</h3>
+    <%=render 'recipes/comments'%>
+  <%end%>
+</div>
+

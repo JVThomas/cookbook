@@ -13,6 +13,7 @@ class RecipesController < ApplicationController
   end
 
   def create
+    binding.pry
     params_check
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
@@ -32,6 +33,7 @@ class RecipesController < ApplicationController
   end
     
   def update
+    binding.pry
     authorize(@recipe)
     if !!params[:add_ingredient]
       add_ingredient
