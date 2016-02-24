@@ -1,7 +1,0 @@
-<%=form_for(@recipe.comments.build) do |f| %>
-  <%=f.label :content%><br>
-  <%=f.text_area :content, rows: 8, cols:50%><br>
-  <%=f.hidden_field :user_id, value: current_user.id%>
-  <%=f.hidden_field :recipe_id, value: @recipe.id%>
-  <%=f.submit "Submit"%>
-<%end%>
