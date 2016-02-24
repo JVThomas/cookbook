@@ -2,6 +2,7 @@ class RecipesController < ApplicationController
   before_action :require_login, only:[:new, :create, :edit, :update, :destroy]
   before_action :set_recipe, only:[:edit, :update, :show, :destroy]
   before_action :params_check, only:[:new, :create]
+  before_action :set_user, only:[:index,:show]
 
   def new
     params_check
@@ -9,17 +10,9 @@ class RecipesController < ApplicationController
   end
 
   def index
-    if !!params[:user_id]
-      if User.exists?(params[:user_id])
-        @user = User.find(params[:user_id])
-        @recipes = Recipe.where(user_id: @user.id)
-      else
-        flash[:notice] = "User does not exist"
-        redirect_to user_path(current_user) if logged_in?
-        redirect_to root_path
-      end
+    if !!@user
+      @recipes = Recipe.where(user_id:@user.id)
     else
-      @user = false
       @recipes = Recipe.all
     end
   end
@@ -37,6 +30,11 @@ class RecipesController < ApplicationController
   end
 
   def show
+    if @user != @recipe.user
+      flash[:alert] = "Recipe does not belong to specified user"
+      home_redirect
+    end
+
   end
 
   def edit
@@ -67,16 +65,24 @@ class RecipesController < ApplicationController
       params.require(:recipe).permit(:name, :content)
     end
 
+    def set_user
+      @user = nil
+      if !!params[:user_id]
+        if User.exists?(params[:user_id])
+          @user = User.find(params[:user_id])
+        else
+          flash[:alert] = "User does not exist"
+          home_redirect
+        end
+      end
+    end
+
     def set_recipe
       if Recipe.exists?(params[:id])
         @recipe = Recipe.find(params[:id])
       else
         flash[:alert] = "Recipe does not exist"
-        if logged_in?  
-          redirect_to user_path(current_user)
-        else 
-          redirect_to root_path
-        end
+        home_redirect
       end
     end
 

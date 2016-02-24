@@ -30,6 +30,10 @@ class ApplicationController < ActionController::Base
 
     def user_not_authorized
       flash[:alert] = "You are not authorized to perform this action."
+      home_redirect
+    end
+
+    def home_redirect
       if logged_in?  
         redirect_to user_path(current_user)  
       else
