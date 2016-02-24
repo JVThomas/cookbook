@@ -12,6 +12,7 @@
   <%end%>
 
   <% if @recipe.user == current_user%>
+    <%= link_to "Edit Recipe", edit_recipe_path(@recipe)%>
     <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete%>
   <%end%>
 </div>
