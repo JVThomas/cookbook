@@ -30,11 +30,10 @@ class RecipesController < ApplicationController
   end
 
   def show
-    if @user != @recipe.user
+    if !!@user && @user.id != @recipe.user.id
       flash[:alert] = "Recipe does not belong to specified user"
       home_redirect
     end
-
   end
 
   def edit
@@ -63,18 +62,6 @@ class RecipesController < ApplicationController
 
     def recipe_params
       params.require(:recipe).permit(:name, :content)
-    end
-
-    def set_user
-      @user = nil
-      if !!params[:user_id]
-        if User.exists?(params[:user_id])
-          @user = User.find(params[:user_id])
-        else
-          flash[:alert] = "User does not exist"
-          home_redirect
-        end
-      end
     end
 
     def set_recipe

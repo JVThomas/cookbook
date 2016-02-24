@@ -40,4 +40,16 @@ class ApplicationController < ActionController::Base
         redirect_to root_path
       end 
     end
+
+    def set_user
+      @user = nil
+      if !!params[:user_id]
+        if User.exists?(params[:user_id])
+          @user = User.find(params[:user_id])
+        else
+          flash[:alert] = "User does not exist"
+          home_redirect
+        end
+      end
+    end
 end
