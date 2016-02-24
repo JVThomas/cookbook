@@ -13,7 +13,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    binding.pry
     params_check
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
@@ -21,7 +20,7 @@ class RecipesController < ApplicationController
       add_ingredient
       render :new
     else
-      recipe_save
+      recipe_save(@recipe)
     end
   end
 
@@ -33,13 +32,12 @@ class RecipesController < ApplicationController
   end
     
   def update
-    binding.pry
     authorize(@recipe)
     if !!params[:add_ingredient]
       add_ingredient
       render :edit
     else
-      recipe_save
+      recipe_save(@recipe)
     end
   end
 
@@ -75,15 +73,15 @@ class RecipesController < ApplicationController
       flash[:notice] = "Ingredient has been added"
     end
 
-    def recipe_save
-      if !@recipe.user || @recipe.user == current_user
-        @recipe.user ||= current_user
-        @recipe.save
+    def recipe_save(recipe)
+      if !recipe.user || recipe.user == current_user
+        recipe.user ||= current_user
+        recipe.save
         flash[:notice] = "Recipe successfully submitted"
-        redirect_to recipe_path(@recipe)
+        redirect_to recipe_path(recipe)
       else
         flash[:alert] = "Users can only save their own recipes"
-        redirect_to user_path(@user)
+        redirect_to user_path(current_user)
       end
     end
 
