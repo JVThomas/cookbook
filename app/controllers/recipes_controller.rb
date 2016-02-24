@@ -11,15 +11,15 @@ class RecipesController < ApplicationController
   def index
     if !!params[:user_id]
       if User.exists?(params[:user_id])
-        @user_bool = true
-        @recipes = Recipe.where(user_id: params[:user_id])
+        @user = User.find(params[:user_id])
+        @recipes = Recipe.where(user_id: @user.id)
       else
         flash[:notice] = "User does not exist"
         redirect_to user_path(current_user) if logged_in?
         redirect_to root_path
       end
     else
-      @user_bool = false
+      @user = false
       @recipes = Recipe.all
     end
   end
