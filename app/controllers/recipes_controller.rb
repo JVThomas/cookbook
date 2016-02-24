@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
       add_ingredient
       render :new
     else
-      recipe_save(@recipe)
+      recipe_save
     end
   end
 
@@ -46,7 +46,7 @@ class RecipesController < ApplicationController
       add_ingredient
       render :edit
     else
-      recipe_save(@recipe)
+      recipe_save
     end
   end
 
@@ -78,12 +78,12 @@ class RecipesController < ApplicationController
       flash[:notice] = "Ingredient has been added"
     end
 
-    def recipe_save(recipe)
-      if !recipe.user || recipe.user == current_user
-        recipe.user ||= current_user
-        recipe.save
+    def recipe_save
+      if !@recipe.user || @recipe.user == current_user
+        @recipe.user ||= current_user
+        @recipe.save
         flash[:notice] = "Recipe successfully submitted"
-        redirect_to recipe_path(recipe)
+        redirect_to recipe_path(@recipe)
       else
         flash[:alert] = "Users can only save their own recipes"
         redirect_to user_path(current_user)
