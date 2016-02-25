@@ -6,10 +6,8 @@
 <!--Display all build ingredients here, add a checkbox to remove that ingredient 
 Display by collecting @recipe.recipe_ingredients and list them here
 Add new recipe_ingredient for @recipe, render new or edit for the blank-->
-  <% if !@recipe.errors.any? %>
-    <%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
-      <h5>Name: <%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h5>
-    <%end%>
+  <%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
+    <h5><%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h5>
   <%end%>
 
   <h3>Instructions:</h3>

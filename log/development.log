@@ -27760,3 +27760,736 @@ Processing by RecipesController#search as HTML
   Rendered layouts/_navigation.html.erb (2.2ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 3223ms (Views: 74.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at 2016-02-25 13:01:41 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (0.4ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (14.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (187.6ms)
+  Rendered layouts/_messages.html.erb (1.2ms)
+Completed 200 OK in 792ms (Views: 715.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/32" for 127.0.0.1 at 2016-02-25 13:01:46 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mRecipe Exists (0.3ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.7ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.5ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mIngredient Load (0.3ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?  [["recipe_id", 32]]
+  Rendered comments/_comment.html.erb (1007.1ms)
+  Rendered recipes/show.html.erb within layouts/application (1179.5ms)
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 1329ms (Views: 1242.8ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/recipes/32/edit" for 127.0.0.1 at 2016-02-25 13:01:51 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.1ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered recipes/_form.html.erb (30.9ms)
+  Rendered recipes/edit.html.erb within layouts/application (46.4ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 113ms (Views: 86.3ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:01:55 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YjZ3eMz3s2uAz09+pBrofZAyOXe5QK+EznBlonQ/WN/WD1FVFHdWgniYAx427256SaJL81rAkqAODE7t5uTSfw==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"32"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.1ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered recipes/_form.html.erb (9.0ms)
+  Rendered recipes/edit.html.erb within layouts/application (11.4ms)
+  Rendered layouts/_navigation.html.erb (0.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 50.9ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:02:11 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/dHx1WAO8XRtJ06T0uw6kgNHEy3QLUsA+xJ7XxgLZE9J6Nf4uI4UnZVwAvNAGbyV2tdhqTOtdiQ7blAQitDu7w==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "commit"=>"Save Recipe", "id"=>"32"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.2ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/32
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/recipes/32" for 127.0.0.1 at 2016-02-25 13:02:11 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.1ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mComment Load (0.1ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  Rendered comments/_comment.html.erb (2.8ms)
+  Rendered recipes/show.html.erb within layouts/application (22.2ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 79ms (Views: 74.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/recipes/32/edit" for 127.0.0.1 at 2016-02-25 13:02:17 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered recipes/_form.html.erb (11.4ms)
+  Rendered recipes/edit.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 55.7ms | ActiveRecord: 1.6ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:02:59 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"62KpcySIDOMUFn6oUoqHr53XnQMZgnQaBlNtkAenaDdfW49e/AjpCuxBMsjAfwGoREfvh/oCST7GL0bflXzilw==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"32"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered recipes/_form.html.erb (8.2ms)
+  Rendered recipes/edit.html.erb within layouts/application (10.2ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 95ms (Views: 54.9ms | ActiveRecord: 2.2ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:03:06 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XD4eklf21SQRyf7yV7VKckhO3/cKze54yQkleDfoBI/oBzi/j3YwzemespLFQMx1kd6tc+lN01wJdQ43pTOOLw==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "commit"=>"Save Recipe", "id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/32
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/32" for 127.0.0.1 at 2016-02-25 13:03:06 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mRecipe Exists (0.2ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?  [["recipe_id", 32]]
+  Rendered comments/_comment.html.erb (10.3ms)
+  Rendered recipes/show.html.erb within layouts/application (79.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 135ms (Views: 129.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/recipes/32/edit" for 127.0.0.1 at 2016-02-25 13:03:09 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.3ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered recipes/_form.html.erb (11.8ms)
+  Rendered recipes/edit.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 61ms (Views: 55.1ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:03:24 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pq6skrd10aptNX9uB0fjW5CatcULUYr6mlA1OBusO/oSl4q/b/U0Q5ViMw6VsmVcSQrHQejRt95aLB53iXexWg==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"32"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.3ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered recipes/_form.html.erb (8.7ms)
+  Rendered recipes/edit.html.erb within layouts/application (11.1ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 110ms (Views: 53.3ms | ActiveRecord: 2.7ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:03:34 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"t02PvSjxA/2E4BGIIgLqWuUlwHoEfKRPSOrI/zfPY+cDdKmQ8HHmFHy3Xeiw92xdPLWy/uf8mWuIluOwpRTpRw==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "commit"=>"Save Recipe", "id"=>"32"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.3ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/32
+Completed 302 Found in 46ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/recipes/32" for 127.0.0.1 at 2016-02-25 13:03:34 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  Rendered comments/_comment.html.erb (12.5ms)
+  Rendered recipes/show.html.erb within layouts/application (83.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 145ms (Views: 140.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/recipes/32/edit" for 127.0.0.1 at 2016-02-25 13:03:44 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered recipes/_form.html.erb (13.1ms)
+  Rendered recipes/edit.html.erb within layouts/application (15.8ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 57.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/recipes/32/edit" for 127.0.0.1 at 2016-02-25 13:05:32 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered recipes/_form.html.erb (14.8ms)
+  Rendered recipes/edit.html.erb within layouts/application (16.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 61ms (Views: 55.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/ingredients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 13:05:33 -0500
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:05:36 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mQgGImsb3FhXrmKh/bMpr8gTo33C9Y73cB+9JKIR9yItMSAPs5s5sa/5LsFvRq+oEYPR+SF1s9OwY5ZrMMp9gg==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.3ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered recipes/_form.html.erb (12.6ms)
+  Rendered recipes/edit.html.erb within layouts/application (14.6ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 58.4ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:05:42 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wxnr3lbfn48C3adO67xQ0pQkj+1otwdWMQ1LzMd8FKrvIM3zjl96ZvqK6y55SdbVTbT9aYs3OnLxcWCDVaeeCg==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered recipes/_form.html.erb (11.7ms)
+  Rendered recipes/edit.html.erb within layouts/application (13.7ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 49.6ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:05:52 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gx1o6dATnANDQ3FYoEw80AJObgUr3kmGt0AmjFZORKivJE7ECJN56rsUPTgyubrX294cgchedKJ3PA3DxJXOCA==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered recipes/_form.html.erb (10.9ms)
+  Rendered recipes/edit.html.erb within layouts/application (13.2ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 48.6ms | ActiveRecord: 1.2ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:05:57 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OcDsv1cZa7Wfh4lalCcoyM5nqhsku0rtX0izGWvFhDKN+cqSj5mOXGfQxToG0q7PF/fYn8c7d8mfNJhW+R4Okg==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"Cake", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered recipes/_form.html.erb (10.3ms)
+  Rendered recipes/edit.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 47.6ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:06:03 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1QTN+TSkVzSqbipmxefMJoiVT+GPkwSpw9rZ/fdBN4RhPevU7CSy3VI5ZgZXEkohUQU9ZWwTOY0DpvKyZZq9JA==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>"2"}}, "add_ingredient"=>"Add Ingredient", "id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 30]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered recipes/_form.html.erb (11.2ms)
+  Rendered recipes/edit.html.erb within layouts/application (16.4ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 51.6ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/recipes/32" for 127.0.0.1 at 2016-02-25 13:06:07 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0k4brgdp1rDfu0xyvUTwXQba4RUwE2IxC793mmcc4Hpmdz2D3+kzWSfsABIvsXZa30qTkdOTXxXLw1zV9cdq2g==", "recipe"=>{"name"=>"Mango Cake", "content"=>"Make the cake", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "commit"=>"Save Recipe", "id"=>"32"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/recipes/32
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/32" for 127.0.0.1 at 2016-02-25 13:06:07 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mRecipe Exists (0.2ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?  [["recipe_id", 32]]
+  Rendered comments/_comment.html.erb (2.7ms)
+  Rendered recipes/show.html.erb within layouts/application (43.9ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 95.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2016-02-25 13:06:11 -0500
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered recipes/_form.html.erb (14.0ms)
+  Rendered recipes/new.html.erb within layouts/application (17.4ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 99ms (Views: 96.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2016-02-25 13:06:32 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G/lhoDOf1HNWfcQDKC/u8v1MTjnJiHrc9n9a1AUK8z2vwEeN6x8xmq4qiGO62mj1JNw8vSoIR/g2A3Gbl9F5nQ==", "recipe"=>{"name"=>"Hot Dogs", "content"=>"Put the hot dog in the bread\r\nEat it", "recipe_ingredients"=>{"ingredient_name"=>"Hot Dog", "ingredient_quantity"=>"1"}}, "add_ingredient"=>"Add Ingredient"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Unpermitted parameter: recipe_ingredients
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT 1[0m  [["name", "Hot Dog"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mIngredient Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = 'Hot Dog' LIMIT 1[0m
+  [1m[35mSQL (15.0ms)[0m  INSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Hot Dog"], ["created_at", "2016-02-25 18:06:32.803154"], ["updated_at", "2016-02-25 18:06:32.803154"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "recipes" ("name", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Hot Dogs"], ["content", "Put the hot dog in the bread\r\nEat it"], ["user_id", 3], ["created_at", "2016-02-25 18:06:32.826337"], ["updated_at", "2016-02-25 18:06:32.826337"]]
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipe_ingredients" ("ingredient_id", "quantity", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ingredient_id", 32], ["quantity", 1], ["recipe_id", 33], ["created_at", "2016-02-25 18:06:32.829207"], ["updated_at", "2016-02-25 18:06:32.829207"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 33]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 32]]
+  Rendered recipes/_form.html.erb (15.0ms)
+  Rendered recipes/new.html.erb within layouts/application (29.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 166ms (Views: 124.6ms | ActiveRecord: 20.0ms)
+
+
+Started PATCH "/recipes/33" for 127.0.0.1 at 2016-02-25 13:06:38 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mnjqu2QJ2bR9KEl9PxL2uzqmDTLwVlM8UPu5Y/YsTruGQcyWvIk8XYV/BR2t53C84zZ/thPWbhiQh5IsZPfEGw==", "recipe"=>{"name"=>"Hot Dogs", "content"=>"Put the hot dog in the bread\r\nEat it", "recipe_ingredients"=>{"ingredient_name"=>"Bread", "ingredient_quantity"=>"1"}}, "add_ingredient"=>"Add Ingredient", "id"=>"33"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT 1  [["name", "Bread"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "recipe_ingredients" ("ingredient_id", "quantity", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ingredient_id", 18], ["quantity", 1], ["recipe_id", 33], ["created_at", "2016-02-25 18:06:38.041269"], ["updated_at", "2016-02-25 18:06:38.041269"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 33]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 18]]
+  Rendered recipes/_form.html.erb (12.2ms)
+  Rendered recipes/edit.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 67.7ms | ActiveRecord: 4.0ms)
+
+
+Started PATCH "/recipes/33" for 127.0.0.1 at 2016-02-25 13:06:40 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"INXHA6c2ivciJh2vpQ17/0sa0UjQziPaGzvL60sLMS6U7OEuf7ZvHtpxUc83+P34koqjzDNOHv7bR+Ck2dC7jg==", "recipe"=>{"name"=>"Hot Dogs", "content"=>"Put the hot dog in the bread\r\nEat it", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "commit"=>"Save Recipe", "id"=>"33"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.1ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/33
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/33" for 127.0.0.1 at 2016-02-25 13:06:40 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.1ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 33]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?  [["recipe_id", 33]]
+  Rendered comments/_comment.html.erb (2.6ms)
+  Rendered recipes/show.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 70ms (Views: 66.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/recipes/33/edit" for 127.0.0.1 at 2016-02-25 13:06:42 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.1ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 33]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 18]]
+  Rendered recipes/_form.html.erb (11.9ms)
+  Rendered recipes/edit.html.erb within layouts/application (14.7ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 56.4ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/recipes/33" for 127.0.0.1 at 2016-02-25 13:06:45 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msKLZ+CBqiw8vsDGo3JPVYI2RxkRZEycx1LMYicZgwEu+61KOAFPxcTpjKYxh8lSW6Y1nfLkcbgHLucttcIJoQ==", "recipe"=>{"name"=>"Hot Dogs", "content"=>"Put the hot dog in the bread\r\nEat it", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"33"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 33]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 33]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 18]]
+  Rendered recipes/_form.html.erb (12.3ms)
+  Rendered recipes/edit.html.erb within layouts/application (14.2ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 58ms (Views: 52.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-02-25 13:06:47 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (6.2ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 69ms (Views: 65.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/new" for 127.0.0.1 at 2016-02-25 13:06:51 -0500
+Processing by RecipesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered recipes/_form.html.erb (10.7ms)
+  Rendered recipes/new.html.erb within layouts/application (12.9ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 81ms (Views: 78.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2016-02-25 13:06:54 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"15FygNqjd6kpnn5c6G6MRJETHZtxXTvU46stJPbebn5jqFStAiOSQNHJMjx6mwpDSINvH5LdBvAj1wZrZAXk3g==", "recipe"=>{"name"=>"", "content"=>"", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Unpermitted parameter: recipe_ingredients
+  Rendered recipes/_form.html.erb (10.1ms)
+  Rendered recipes/new.html.erb within layouts/application (12.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 51.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2016-02-25 13:06:59 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lyQ/JYaSbfRvMwiDWSm/mU5+Rk1w53eMiHu3GiE8GmsjHRkIXhKIHZdkROPL3Dmel+40yZNnSqhIB5xVs+eQyw==", "recipe"=>{"name"=>"", "content"=>"", "recipe_ingredients"=>{"ingredient_name"=>"Hot dog", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Unpermitted parameter: recipe_ingredients
+  Rendered recipes/_form.html.erb (9.5ms)
+  Rendered recipes/new.html.erb within layouts/application (11.8ms)
+  Rendered layouts/_navigation.html.erb (1.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 50.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2016-02-25 13:07:19 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jqzPRoXieXwHE993VUPzilJCc963NWiTKzod5dnCW686lelrXWKclf9EkxfHtnWNi9IBWlS1VbfrRjaqSxnRDw==", "recipe"=>{"name"=>"Thin mints", "content"=>"Easy to make", "recipe_ingredients"=>{"ingredient_name"=>"Mint cookies", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Unpermitted parameter: recipe_ingredients
+  Rendered recipes/_form.html.erb (9.8ms)
+  Rendered recipes/new.html.erb within layouts/application (11.7ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2016-02-25 13:07:22 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bx6brB1NenmjlJIp984rmNQwSUNFJCey9OXZdUy4sySzJ72Bxc2fkFvD3kllO62fDaA7x6akGpY0mfI63mM5hA==", "recipe"=>{"name"=>"Thin mints", "content"=>"Easy to make", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>"1"}}, "add_ingredient"=>"Add Ingredient"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Unpermitted parameter: recipe_ingredients
+  Rendered recipes/_form.html.erb (10.1ms)
+  Rendered recipes/new.html.erb within layouts/application (12.4ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 53ms (Views: 50.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2016-02-25 13:07:31 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1TRkMmhm/dND6KC1ushKbv0lmjkb5u2kaaerpVL5euNhDUIfsOYYOru/7NUoPcxpJLXovfhm0ICp24DqwCLwQw==", "recipe"=>{"name"=>"Thin mints", "content"=>"Easy to make", "recipe_ingredients"=>{"ingredient_name"=>"Thin mints", "ingredient_quantity"=>"1"}}, "add_ingredient"=>"Add Ingredient"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Unpermitted parameter: recipe_ingredients
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT 1[0m  [["name", "Thin Mints"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mIngredient Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "ingredients" WHERE "ingredients"."name" = 'Thin Mints' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "ingredients" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Thin Mints"], ["created_at", "2016-02-25 18:07:31.072658"], ["updated_at", "2016-02-25 18:07:31.072658"]]
+  [1m[36m (2.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "recipes" ("name", "content", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Thin mints"], ["content", "Easy to make"], ["user_id", 3], ["created_at", "2016-02-25 18:07:31.079229"], ["updated_at", "2016-02-25 18:07:31.079229"]]
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "recipe_ingredients" ("ingredient_id", "quantity", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ingredient_id", 33], ["quantity", 1], ["recipe_id", 34], ["created_at", "2016-02-25 18:07:31.080934"], ["updated_at", "2016-02-25 18:07:31.080934"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 34]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 33]]
+  Rendered recipes/_form.html.erb (12.2ms)
+  Rendered recipes/new.html.erb within layouts/application (14.3ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 68ms (Views: 49.9ms | ActiveRecord: 5.7ms)
+
+
+Started PATCH "/recipes/34" for 127.0.0.1 at 2016-02-25 13:07:49 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LuRBe/FQpnXtjLm7f+qLjfXVvlUP/DAiUFU1VCLm34ya3WdWKdBDnBXb9dvtHw2KLEXM0ex8DQaQKR4bsD1VLA==", "recipe"=>{"name"=>"Thin mints", "content"=>"Easy to make, just eat it!", "recipe_ingredients"=>{"ingredient_name"=>"Milk", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient", "id"=>"34"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 34]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 33]]
+  Rendered recipes/_form.html.erb (10.7ms)
+  Rendered recipes/edit.html.erb within layouts/application (12.6ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 63ms (Views: 57.6ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/recipes/34" for 127.0.0.1 at 2016-02-25 13:07:55 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kfeVPy028mfiRHDilBohe8qrW4xJQw4Lxztoh+R5NM4lzrMS9bYXjhoTPIIG76d8EzspCKrDMy8HR0PIdqK+bg==", "recipe"=>{"name"=>"Thin mints", "content"=>"Easy to make", "recipe_ingredients"=>{"ingredient_name"=>"Milk", "ingredient_quantity"=>"1"}}, "add_ingredient"=>"Add Ingredient", "id"=>"34"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  [1m[35mRecipe Load (0.3ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."name" = ? LIMIT 1  [["name", "Milk"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "recipe_ingredients" ("ingredient_id", "quantity", "recipe_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["ingredient_id", 5], ["quantity", 1], ["recipe_id", 34], ["created_at", "2016-02-25 18:07:55.061796"], ["updated_at", "2016-02-25 18:07:55.061796"]]
+  [1m[36m (2.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mRecipeIngredient Load (0.4ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 34]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered recipes/_form.html.erb (12.8ms)
+  Rendered recipes/edit.html.erb within layouts/application (15.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 64ms (Views: 51.3ms | ActiveRecord: 4.9ms)
+
+
+Started PATCH "/recipes/34" for 127.0.0.1 at 2016-02-25 13:07:57 -0500
+Processing by RecipesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FemPK75RtXs4p5wL61j3+yuz6B8MIgPeE8eQs2Db5vKh0KkGZtFQksDw0Gt5rXH88iOam++iPvrTu7v88gBsUg==", "recipe"=>{"name"=>"Thin mints", "content"=>"Easy to make", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "commit"=>"Save Recipe", "id"=>"34"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.1ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/recipes/34
+Completed 302 Found in 6ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/recipes/34" for 127.0.0.1 at 2016-02-25 13:07:57 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 34]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 34]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.8ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 34]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 33]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?  [["recipe_id", 34]]
+  Rendered comments/_comment.html.erb (1.9ms)
+  Rendered recipes/show.html.erb within layouts/application (11.2ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 60ms (Views: 56.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-02-25 13:08:02 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (6.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 79ms (Views: 77.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-25 13:08:03 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 63.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-02-25 13:08:05 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (6.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 13:08:09 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0f66Q6MxeVaAiqjgfS93yjuDgYumO7VLKgoTx2IuzCxlx5xue7Gcv3jd5IDv2vHN4hPzD0W7iG/qdjiI8PVGjA==", "ingredient_name"=>"Milk", "commit"=>"Search"}
+  [1m[36mRecipe Load (0.4ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  Rendered recipes/index.html.erb within layouts/application (53.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 97ms (Views: 91.3ms | ActiveRecord: 0.6ms)
