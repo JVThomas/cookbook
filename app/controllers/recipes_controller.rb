@@ -57,11 +57,11 @@ class RecipesController < ApplicationController
 
   def search
     if params[:ingredient_name].blank?
-      flash[:alert] = "Search field not filled in"
+      flash[:alert] = "Search field empty"
       redirect_to :back
     else
       @recipes = Recipe.search_by_ingredient(params[:ingredient_name])
-      flash[:notice] = "Search successfully done."
+      flash[:notice] = "Search successfully completed. #{@recipes.length} results found"
       render :index
     end
   end

@@ -1,4 +1,16 @@
 <h1>Recipe Form</h1>
+
+<% if @recipe.errors.any?%>
+  <div class = "error-explanation">
+    <h3>Submission failed due to the following errors:</h3>
+    <ul>
+      <%@recipe.errors.full_messages.each do |msg|%>
+        <li><%=msg%></li>
+      <%end%>
+    </ul>
+  </div>
+<%end%>
+
 <%= form_for(@recipe) do |f|%>
   <%= f.label :name %> <br>
   <%= f.text_field :name%><br>

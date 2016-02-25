@@ -9,7 +9,7 @@ class Recipe < ActiveRecord::Base
 
   def add_ingredient(attributes)
     attributes.each do |key,value|
-      errors.add(key, "#{key.to_s} must be filled in") if value.blank?
+      errors.add(key, "must be filled in") if value.blank?
     end
     if !errors.any?
       @ingredient = Ingredient.find_or_create_by(name:(attributes[:ingredient_name].titlecase))
