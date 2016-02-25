@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     comment_save(@comment)
-    redirect_to recipe_path(@comment.recipe)
   end
 
   private
@@ -12,11 +11,13 @@ class CommentsController < ApplicationController
     end
 
     def comment_save(comment)
-      if comment.save
+      if comment.valid?
+        comment.save
         flash[:notice] = "Comment successfully saved"
       else
-        flash[:notice] = "Comment did not save successfully"
+        flash[:alert] = "Comment must be filled in"  
       end
+      redirect_to recipe_path(comment.recipe)
     end
 
 end

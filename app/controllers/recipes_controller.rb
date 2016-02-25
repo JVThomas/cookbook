@@ -22,10 +22,9 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user = current_user
     if !!params[:add_ingredient]
-      add_ingredient
-      render :new
+      add_ingredient(:new)
     else
-      recipe_save
+      recipe_save(:new)
     end
   end
 
@@ -43,10 +42,9 @@ class RecipesController < ApplicationController
   def update
     authorize(@recipe)
     if !!params[:add_ingredient]
-      add_ingredient
-      render :edit
+      add_ingredient(:edit)
     else
-      recipe_save
+      recipe_save(:edit)
     end
   end
 
@@ -73,17 +71,21 @@ class RecipesController < ApplicationController
       end
     end
 
-    def add_ingredient
+    def add_ingredient(sym)
       @recipe.add_ingredient(params[:recipe][:recipe_ingredients])
-      flash[:notice] = "Ingredient has been added"
+      flash[:notice] = "Ingredient has been added" if !@recipe.errors.any?
+      render sym
     end
 
-    def recipe_save
+    def recipe_save(sym)
       if !@recipe.user || @recipe.user == current_user
-        @recipe.user ||= current_user
-        @recipe.save
-        flash[:notice] = "Recipe successfully submitted"
-        redirect_to recipe_path(@recipe)
+        if @recipe.valid?
+          @recipe.save
+          flash[:notice] = "Recipe successfully submitted"
+          redirect_to recipe_path(@recipe)
+        else
+          render sym
+        end
       else
         flash[:alert] = "Users can only save their own recipes"
         redirect_to user_path(current_user)

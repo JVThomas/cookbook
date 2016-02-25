@@ -2,13 +2,13 @@
   <h1><%= @recipe.name%></h1>
   <h3>By: <%=link_to "#{@recipe.user_email}", user_path(@recipe.user)%></h3>
 
-  <h3>Description:</h3>
+  <h3>Instructions:</h3>
   <h4><%=@recipe.content%></h4>
 
   <h3>Ingredients</h3>
 
   <%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
-      <h4>Name: <%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h4>
+      <h4><%=recipe_ingredient.ingredient_name %>: <%=recipe_ingredient.quantity%></h4>
   <%end%>
 
   <% if @recipe.user == current_user%>
