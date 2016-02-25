@@ -21,4 +21,8 @@ class Recipe < ActiveRecord::Base
     user.email
   end
 
+  def self.search_by_ingredient(name)
+    joins(:ingredients).where(ingredients:{name: name.titlecase}).group(:recipe_id)
+  end
+
 end

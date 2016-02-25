@@ -26504,3 +26504,1259 @@ Processing by RecipesController#show as HTML
   Rendered layouts/_navigation.html.erb (0.5ms)
   Rendered layouts/_messages.html.erb (0.2ms)
 Completed 200 OK in 61ms (Views: 57.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/recipes/28" for 127.0.0.1 at 2016-02-25 12:12:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mRecipe Exists (0.3ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 28]]
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 26]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 31]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?  [["recipe_id", 28]]
+  Rendered comments/_comment.html.erb (1162.0ms)
+  Rendered recipes/show.html.erb within layouts/application (1339.7ms)
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 2306ms (Views: 2090.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/ingredients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 12:12:50 -0500
+
+
+Started GET "/recipes/28/edit" for 127.0.0.1 at 2016-02-25 12:12:52 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.1ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mRecipe Load (0.1ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 28]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 26]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mIngredient Load (1.7ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 31]]
+  Rendered recipes/_form.html.erb (52.7ms)
+  Rendered recipes/edit.html.erb within layouts/application (78.1ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (1.5ms)
+Completed 200 OK in 206ms (Views: 171.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/recipe_ingredients/29?method=delete" for 127.0.0.1 at 2016-02-25 12:16:40 -0500
+
+ActionController::RoutingError (No route matches [GET] "/recipe_ingredients/29"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<main>'
+
+
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (23.5ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (222.1ms)
+
+
+Started GET "/recipe_ingredients/29?method=delete" for 127.0.0.1 at 2016-02-25 12:16:41 -0500
+
+ActionController::RoutingError (No route matches [GET] "/recipe_ingredients/29"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<main>'
+
+
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.5ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (186.9ms)
+
+
+Started GET "/recipes/28/edit" for 127.0.0.1 at 2016-02-25 12:20:56 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.2ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 28]]
+  [1m[35mIngredient Load (0.2ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 26]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 31]]
+  Rendered recipes/_form.html.erb (43.1ms)
+  Rendered recipes/edit.html.erb within layouts/application (45.7ms)
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 262ms (Views: 217.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:20:56 -0500
+
+
+Started GET "/assets/ingredients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:20:56 -0500
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 12:20:57 -0500
+
+
+Started GET "/recipe_ingredients/48?method=delete" for 127.0.0.1 at 2016-02-25 12:20:58 -0500
+
+ActionController::RoutingError (No route matches [GET] "/recipe_ingredients/48"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<main>'
+
+
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.7ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (182.8ms)
+
+
+Started GET "/recipe_ingredients/48?method=delete" for 127.0.0.1 at 2016-02-25 12:20:59 -0500
+
+ActionController::RoutingError (No route matches [GET] "/recipe_ingredients/48"):
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<main>'
+
+
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/JustinThomas/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (193.3ms)
+
+
+Started GET "/recipes/28/edit" for 127.0.0.1 at 2016-02-25 12:24:39 -0500
+Processing by RecipesController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipe Exists (0.3ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.2ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 28]]
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 26]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 31]]
+  Rendered recipes/_form.html.erb (38.4ms)
+  Rendered recipes/edit.html.erb within layouts/application (40.4ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 129ms (Views: 84.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/ingredients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 12:24:40 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-25 12:24:48 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 90ms (Views: 87.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3/recipes" for 127.0.0.1 at 2016-02-25 12:24:52 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered recipes/index.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (1.8ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 54ms (Views: 47.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3/recipes/28" for 127.0.0.1 at 2016-02-25 12:24:54 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>"3", "id"=>"28"}
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mUser Exists (1.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 28]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 26]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 27]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 31]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?[0m  [["recipe_id", 28]]
+  Rendered comments/_comment.html.erb (11.5ms)
+  Rendered recipes/show.html.erb within layouts/application (47.6ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 112ms (Views: 102.3ms | ActiveRecord: 3.6ms)
+
+
+Started DELETE "/recipes/28" for 127.0.0.1 at 2016-02-25 12:24:58 -0500
+Processing by RecipesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QaiEONQKPKn/975AOTBswnzY2vI+TIPHadJ7psKajtf1kaIVDIrZQAeg8iCrxerFpUiodt3MvuOprlDpUEEEdw==", "id"=>"28"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 28]]
+  [1m[35mRecipe Load (0.2ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mRecipeIngredient Load (0.1ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 28]]
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "recipe_ingredients" WHERE "recipe_ingredients"."id" = ?  [["id", 29]]
+  [1m[36mSQL (0.0ms)[0m  [1mDELETE FROM "recipe_ingredients" WHERE "recipe_ingredients"."id" = ?[0m  [["id", 30]]
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "recipe_ingredients" WHERE "recipe_ingredients"."id" = ?  [["id", 48]]
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "recipes" WHERE "recipes"."id" = ?[0m  [["id", 28]]
+  [1m[35m (1.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 12ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-25 12:24:58 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 43ms (Views: 40.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/3/recipes" for 127.0.0.1 at 2016-02-25 12:25:00 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered recipes/index.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (1.9ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 49ms (Views: 45.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3/recipes/31" for 127.0.0.1 at 2016-02-25 12:25:03 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"user_id"=>"3", "id"=>"31"}
+  [1m[36mRecipe Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 31]]
+  [1m[35mRecipe Load (0.1ms)[0m  SELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 31]]
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mRecipeIngredient Load (0.2ms)[0m  SELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?  [["recipe_id", 31]]
+  [1m[36mIngredient Load (0.1ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 23]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?  [["recipe_id", 31]]
+  Rendered comments/_comment.html.erb (1.8ms)
+  Rendered recipes/show.html.erb within layouts/application (9.5ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 49.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-02-25 12:39:29 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (1.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (18.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (22.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 295ms (Views: 282.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-02-25 12:39:54 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (8.0ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 68ms (Views: 67.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:39:54 -0500
+
+
+Started GET "/assets/ingredients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:39:54 -0500
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-25 12:39:54 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-25 12:39:54 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-25 12:39:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-25 12:39:54 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-25 12:39:54 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:39:55 -0500
+
+
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:39:55 -0500
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-25 12:39:55 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-25 12:39:55 -0500
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:49:36 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZmPoN0MVokhtJXKHtufnDHWdsbWXlVXAPdIj/gkP/NLSWs4am5VHoZVyPuckEmELrA3DMXQVaOT9rgixm9R2cg==", "ingredient_name"=>"milk", "commit"=>"Search"}
+  [1m[36mRecipe Load (1.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  Rendered recipes/index.html.erb within layouts/application (94.5ms)
+Completed 500 Internal Server Error in 13604ms (ActiveRecord: 3.4ms)
+
+ActiveRecord::StatementInvalid - SQLite3::SQLException: ambiguous column name: recipe_id: SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id":
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:461:in `translate_exception_class'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:474:in `rescue in log'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:472:in `log'
+  activerecord (4.2.5) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/database_statements.rb:355:in `select'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.5) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.5) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.5) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.5) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.5) lib/active_record/relation/delegation.rb:46:in `each'
+  app/views/recipes/index.html.erb:13:in `_app_views_recipes_index_html_erb__3132824153748108421_70096090402400'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/JustinThomas/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/recipes_controller.rb:67:in `search'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/conditionalget.rb:38:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (5.0.5) lib/airbrake/rack/middleware.rb:22:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/handler/thin.rb:19:in `run'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<main>'
+
+
+
+Started POST "/__better_errors/33e3057c7dc34ce1/variables" for 127.0.0.1 at 2016-02-25 12:49:50 -0500
+  [1m[35mRecipe Load (1.2ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (1.1ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+  [1m[36mRecipe Load (1.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (1.1ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:50:37 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZmPoN0MVokhtJXKHtufnDHWdsbWXlVXAPdIj/gkP/NLSWs4am5VHoZVyPuckEmELrA3DMXQVaOT9rgixm9R2cg==", "ingredient_name"=>"", "commit"=>"Search"}
+Redirected to http://localhost:3000/recipes
+Completed 302 Found in 6167ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/recipes" for 127.0.0.1 at 2016-02-25 12:50:43 -0500
+Processing by RecipesController#index as HTML
+  [1m[36mRecipe Load (0.8ms)[0m  [1mSELECT "recipes".* FROM "recipes"[0m
+  Rendered recipes/index.html.erb within layouts/application (11.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (12.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 249ms (Views: 224.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-25 12:50:59 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 77ms (Views: 62.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/3/recipes" for 127.0.0.1 at 2016-02-25 12:51:01 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Load (0.3ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered recipes/index.html.erb within layouts/application (8.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.0ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 71ms (Views: 56.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:51:04 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ROJrVQ05oinYVhbvp1w8aJz/2QFWwT/L4+modnav+Vfw20141blHwCABWo81qbpvRW+rhbVBAu8jlYM55HRz9w==", "ingredient_name"=>"", "commit"=>"Search"}
+Redirected to http://localhost:3000/users/3/recipes
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/3/recipes" for 127.0.0.1 at 2016-02-25 12:51:04 -0500
+Processing by RecipesController#index as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" WHERE "recipes"."user_id" = ?[0m  [["user_id", 3]]
+  Rendered recipes/index.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.1ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43ms (Views: 40.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:51:23 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DUMiZYvDwVxrf7J8EAyLUQxxDu1yLibmh0E44cZFyjO5egRIU0MktZMo/hyC+Q1W1eF8aZGuG8JHPROuVJ5Akw==", "ingredient_name"=>"milk", "commit"=>"Search"}
+  [1m[36mRecipe Load (2.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (4.5ms)[0m  SELECT  "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  ORDER BY "recipes"."id" ASC LIMIT 1  [["name", "Milk"]]
+  [1m[36mRecipe Load (2.1ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  Rendered recipes/index.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 116726ms (ActiveRecord: 10.6ms)
+
+ActiveRecord::StatementInvalid - SQLite3::SQLException: ambiguous column name: recipe_id: SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id":
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:461:in `translate_exception_class'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:474:in `rescue in log'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:472:in `log'
+  activerecord (4.2.5) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/database_statements.rb:355:in `select'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.5) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.5) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.5) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.5) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.5) lib/active_record/relation/delegation.rb:46:in `each'
+  app/views/recipes/index.html.erb:13:in `_app_views_recipes_index_html_erb__3132824153748108421_70096090402400'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/JustinThomas/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/recipes_controller.rb:66:in `search'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/conditionalget.rb:38:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (5.0.5) lib/airbrake/rack/middleware.rb:22:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/handler/thin.rb:19:in `run'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<main>'
+
+
+
+Started POST "/__better_errors/62532b3754b3a059/variables" for 127.0.0.1 at 2016-02-25 12:53:20 -0500
+  [1m[35mRecipe Load (1.3ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (0.8ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+  [1m[36mRecipe Load (1.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (1.1ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:53:25 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DUMiZYvDwVxrf7J8EAyLUQxxDu1yLibmh0E44cZFyjO5egRIU0MktZMo/hyC+Q1W1eF8aZGuG8JHPROuVJ5Akw==", "ingredient_name"=>"milk", "commit"=>"Search"}
+  [1m[36mRecipe Load (1.9ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (1.6ms)[0m  SELECT  "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  ORDER BY "recipes"."id" ASC LIMIT 1  [["name", "Milk"]]
+  [1m[36mRecipe Load (1.8ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  Rendered recipes/index.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 175036ms (ActiveRecord: 6.7ms)
+
+ActiveRecord::StatementInvalid - SQLite3::SQLException: ambiguous column name: recipe_id: SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id":
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:461:in `translate_exception_class'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:474:in `rescue in log'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:472:in `log'
+  activerecord (4.2.5) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/database_statements.rb:355:in `select'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.5) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.5) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.5) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.5) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.5) lib/active_record/relation/delegation.rb:46:in `each'
+  app/views/recipes/index.html.erb:13:in `_app_views_recipes_index_html_erb__3132824153748108421_70096090402400'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/JustinThomas/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/recipes_controller.rb:66:in `search'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/conditionalget.rb:38:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (5.0.5) lib/airbrake/rack/middleware.rb:22:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/handler/thin.rb:19:in `run'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<main>'
+
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:56:21 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DUMiZYvDwVxrf7J8EAyLUQxxDu1yLibmh0E44cZFyjO5egRIU0MktZMo/hyC+Q1W1eF8aZGuG8JHPROuVJ5Akw==", "ingredient_name"=>"milk", "commit"=>"Search"}
+  [1m[35mRecipe Load (1.4ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+  Rendered recipes/index.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 1816ms (ActiveRecord: 1.4ms)
+
+ActiveRecord::StatementInvalid - SQLite3::SQLException: ambiguous column name: recipe_id: SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id":
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:461:in `translate_exception_class'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:474:in `rescue in log'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract_adapter.rb:472:in `log'
+  activerecord (4.2.5) lib/active_record/connection_adapters/sqlite3_adapter.rb:293:in `exec_query'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/database_statements.rb:355:in `select'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/database_statements.rb:32:in `select_all'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `block in select_all'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:83:in `cache_sql'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/query_cache.rb:68:in `select_all'
+  activerecord (4.2.5) lib/active_record/querying.rb:39:in `find_by_sql'
+  activerecord (4.2.5) lib/active_record/relation.rb:639:in `exec_queries'
+  activerecord (4.2.5) lib/active_record/relation.rb:515:in `load'
+  activerecord (4.2.5) lib/active_record/relation.rb:243:in `to_a'
+  activerecord (4.2.5) lib/active_record/relation/delegation.rb:46:in `each'
+  app/views/recipes/index.html.erb:13:in `_app_views_recipes_index_html_erb__3132824153748108421_70096090402400'
+  actionview (4.2.5) lib/action_view/template.rb:145:in `block in render'
+  activesupport (4.2.5) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:333:in `instrument'
+  actionview (4.2.5) lib/action_view/template.rb:143:in `render'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:54:in `block (2 levels) in render_template'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/abstract_renderer.rb:39:in `instrument'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:53:in `block in render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:61:in `render_with_layout'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:52:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.5) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.5) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.5) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.5) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.5) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.5) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/JustinThomas/.rvm/rubies/ruby-2.2.3/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.5) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/recipes_controller.rb:66:in `search'
+  actionpack (4.2.5) lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.5) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.5) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.5) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.5) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.5) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.5) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.5) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.5) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.5) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:76:in `dispatch'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:45:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.5) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.5) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:186:in `call!'
+  omniauth (1.3.1) lib/omniauth/strategy.rb:164:in `call'
+  warden (1.2.6) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.6) lib/warden/manager.rb:34:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/etag.rb:24:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/conditionalget.rb:38:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/flash.rb:260:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:225:in `context'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.5) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.5) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.5) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  airbrake (5.0.5) lib/airbrake/rack/middleware.rb:22:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.9.1) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/handler/thin.rb:19:in `run'
+   () Users/JustinThomas/.rvm/gems/ruby-2.2.3@global/gems/rack-1.6.4/lib/rack/server.rb:286:in `start'
+  railties (4.2.5) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.5) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.5) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `<main>'
+
+
+
+Started POST "/__better_errors/32a650cb452664fc/variables" for 127.0.0.1 at 2016-02-25 12:56:23 -0500
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (1.0ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (3.7ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+  [1m[36mRecipe Load (1.0ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" INNER JOIN "recipe_ingredients" "recipe_ingredients_ingredients" ON "recipe_ingredients_ingredients"."ingredient_id" = "ingredients"."id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:58:10 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DUMiZYvDwVxrf7J8EAyLUQxxDu1yLibmh0E44cZFyjO5egRIU0MktZMo/hyC+Q1W1eF8aZGuG8JHPROuVJ5Akw==", "ingredient_name"=>"milk", "commit"=>"Search"}
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  [["name", "Milk"]]
+  Rendered recipes/index.html.erb within layouts/application (2.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (15.3ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 21026ms (Views: 216.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/recipes/32" for 127.0.0.1 at 2016-02-25 12:58:50 -0500
+Processing by RecipesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mRecipe Exists (0.3ms)[0m  SELECT  1 AS one FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1  [["id", 32]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT  "recipes".* FROM "recipes" WHERE "recipes"."id" = ? LIMIT 1[0m  [["id", 32]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mRecipeIngredient Load (0.3ms)[0m  [1mSELECT "recipe_ingredients".* FROM "recipe_ingredients" WHERE "recipe_ingredients"."recipe_id" = ?[0m  [["recipe_id", 32]]
+  [1m[35mIngredient Load (0.3ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mIngredient Load (0.2ms)[0m  [1mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mIngredient Load (0.1ms)[0m  SELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."recipe_id" = ?  [["recipe_id", 32]]
+  Rendered comments/_comment.html.erb (10.4ms)
+  Rendered recipes/show.html.erb within layouts/application (72.8ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 181ms (Views: 171.5ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:59:08 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YEHuqFGg6ffH1sAcciFJTlr7Z0RulrY5I98KHhGbSpHUeMiFiSAMHj+BjHzg1M9Jg2sVwI0Wix3joyFRg0DAMQ==", "ingredient_name"=>"Milk", "commit"=>"Search"}
+  [1m[36mRecipe Load (0.5ms)[0m  [1mSELECT  "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  ORDER BY "recipes"."id" ASC LIMIT 1[0m  [["name", "Milk"]]
+  [1m[35mRecipe Load (0.6ms)[0m  SELECT  "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"  ORDER BY "recipes"."id" DESC LIMIT 1  [["name", "Milk"]]
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Milk"]]
+  Rendered recipes/index.html.erb within layouts/application (2.8ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 43784ms (Views: 100.8ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/recipes/search" for 127.0.0.1 at 2016-02-25 12:59:59 -0500
+Processing by RecipesController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jZVlVq1KY4stFMX878iRT90M4JyzXJAP+7EbONqJLTg5rEN7dcqGYtVDiZx9PRdIBJySGFDcrSs7zTB3SFKnmA==", "ingredient_name"=>"eggs", "commit"=>"Search"}
+  [1m[36mRecipe Load (0.2ms)[0m  [1mSELECT "recipes".* FROM "recipes" INNER JOIN "recipe_ingredients" ON "recipe_ingredients"."recipe_id" = "recipes"."id" INNER JOIN "ingredients" ON "ingredients"."id" = "recipe_ingredients"."ingredient_id" WHERE "ingredients"."name" = ? GROUP BY "recipe_id"[0m  [["name", "Eggs"]]
+  Rendered recipes/index.html.erb within layouts/application (3.3ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (2.2ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 3223ms (Views: 74.4ms | ActiveRecord: 0.4ms)

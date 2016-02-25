@@ -1,5 +1,17 @@
 <h1><%= display_header(@user) %></h1>
 
-<%@recipes.each do |recipe| %>
-  <h4><%=display_index_links(recipe)%></h4>
-<%end%>
+<div>
+  <h2>Want to search all recipes by ingredient? Enter the ingredient name below</h2>
+  <%=form_tag search_path do%>
+    <%=label_tag :ingredient_name%>
+    <%=text_field_tag :ingredient_name%>
+    <%=submit_tag "Search"%>
+  <%end%>
+</div>
+
+<div>
+  <%@recipes.each do |recipe| %>
+    <h4><%=display_index_links(recipe)%></h4>
+  <%end%>
+</div>
+

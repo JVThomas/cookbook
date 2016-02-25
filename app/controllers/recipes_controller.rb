@@ -55,6 +55,17 @@ class RecipesController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  def search
+    if params[:ingredient_name].blank?
+      flash[:alert] = "Search field not filled in"
+      redirect_to :back
+    else
+      @recipes = Recipe.search_by_ingredient(params[:ingredient_name])
+      flash[:notice] = "Search successfully done."
+      render :index
+    end
+  end
+
   
   private
 
