@@ -34072,3 +34072,96 @@ Processing by RecipesController#search as HTML
   Rendered layouts/_navigation.html.erb (2.2ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 130ms (Views: 44.3ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/recipes/" for 127.0.0.1 at 2016-02-26 11:57:08 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (26.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RecipesController#index as HTML
+  [1m[35mRecipe Load (7.4ms)[0m  SELECT "recipes".* FROM "recipes"
+  Rendered recipes/index.html.erb within layouts/application (22.5ms)
+  [1m[36mUser Load (17.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered layouts/_navigation.html.erb (95.8ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 743ms (Views: 630.9ms | ActiveRecord: 26.3ms)
+
+
+Started GET "/assets/comments.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/ingredients.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/recipes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/comments.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/ingredients.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 11:57:09 -0500
+
+
+Started GET "/assets/recipes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2016-02-26 11:57:10 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2016-02-26 11:57:10 -0500
+
+
+Started GET "/users/3" for 127.0.0.1 at 2016-02-26 11:57:12 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_navigation.html.erb (1.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 116ms (Views: 72.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3/recipes/new" for 127.0.0.1 at 2016-02-26 11:57:13 -0500
+Processing by RecipesController#new as HTML
+  Parameters: {"user_id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+  Rendered recipes/_errors.html.erb (22.5ms)
+  Rendered recipes/_form.html.erb (1049.6ms)
+  Rendered recipes/new.html.erb within layouts/application (1054.3ms)
+  Rendered layouts/_navigation.html.erb (0.5ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 1109ms (Views: 1106.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2016-02-26 11:57:16 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oITQA8TRIPLjzZdI4eqJeAJIHbu8AF8mk6Kawj4SNxY0L48D+OETfi788gmUs7jCURXbm0YPqOS0kxocdwJvlw==", "recipe"=>{"name"=>"", "content"=>"", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "commit"=>"Save Recipe"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 3]]
+Unpermitted parameter: recipe_ingredients
+  Rendered recipes/_errors.html.erb (1.1ms)
+  Rendered recipes/_form.html.erb (15.1ms)
+  Rendered recipes/new.html.erb within layouts/application (17.6ms)
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 66ms (Views: 53.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/recipes" for 127.0.0.1 at 2016-02-26 11:57:20 -0500
+Processing by RecipesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2fYTK9e6pYB0Z/G6+FphcC92P7EaPeSkjedGy8elHilNXUwr64qWDLlWlPuNA1DKfCv5keAyE2aq1sYVjrVGqA==", "recipe"=>{"name"=>"", "content"=>"", "recipe_ingredients"=>{"ingredient_name"=>"", "ingredient_quantity"=>""}}, "add_ingredient"=>"Add Ingredient"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 3]]
+Unpermitted parameter: recipe_ingredients
+  Rendered recipes/_errors.html.erb (0.8ms)
+  Rendered recipes/_form.html.erb (12.3ms)
+  Rendered recipes/new.html.erb within layouts/application (14.5ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.1ms)
+Completed 200 OK in 55ms (Views: 52.0ms | ActiveRecord: 0.2ms)
