@@ -12,7 +12,7 @@ class Recipe < ActiveRecord::Base
       errors.add(key, "must be filled in") if value.blank?
     end
     if !errors.any?
-      @ingredient = Ingredient.find_or_create_by(name:(attributes[:ingredient_name].titlecase))
+      @ingredient = Ingredient.find_or_create_by(name:(attributes[:ingredient_name].downcase.titlecase))
       self.recipe_ingredients.build(ingredient_id: @ingredient.id, quantity: attributes[:ingredient_quantity]).save
     end
   end
@@ -22,7 +22,7 @@ class Recipe < ActiveRecord::Base
   end
 
   def self.search_by_ingredient(name)
-    joins(:ingredients).where(ingredients:{name: name.titlecase}).group(:recipe_id)
+    joins(:ingredients).where(ingredients:{name: name.downcase.titlecase}).group(:recipe_id)
   end
 
 end

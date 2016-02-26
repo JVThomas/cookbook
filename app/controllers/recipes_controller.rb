@@ -89,7 +89,7 @@ class RecipesController < ApplicationController
     end
 
     def recipe_save(sym)
-      if !@recipe.user || @recipe.user == current_user
+      if @recipe.user == current_user
         @recipe.update(recipe_params) if sym == :edit
         if @recipe.valid?
           @recipe.save if sym == :new
