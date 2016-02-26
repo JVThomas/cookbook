@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   end  
   
   get '/', to: 'welcome#home', as: :home
-  
+  root 'welcome#home'
 end
