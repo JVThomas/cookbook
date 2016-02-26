@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
     comment_save(:new)
   end
 
@@ -13,11 +14,11 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @authorize(@comment)
+    authorize(@comment)
   end
 
   def update
-    @authorize(@comment)
+    authorize(@comment)
     comment_save(:edit)
   end
 
@@ -29,9 +30,11 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @authorize(@comment)
+    @recipe = @comment.recipe
+    authorize(@comment)
     @comment.destroy
-
+    flash[:notice] = "Comment successfully deleted"
+    redirect_to recipe_path(@recipe)
   end
 
   private
@@ -39,18 +42,26 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:content, :user_id, :recipe_id)
     end
 
-    def comment_save
+    def comment_save(sym)
+      @comment.update(comment_params) if sym == :edit
       if @comment.valid?
-        @comment.save
+        @comment.save if sym == :new
         flash[:notice] = "Comment successfully saved"
+        redirect_to user_comments_path(current_user)
       else
-        flash[:alert] = "Comment must be filled in"  
+        flash[:alert] = "Comment must be filled in" if sym == :new 
+        redirect_to recipe_path(@comment.recipe) if sym == :new
+        render :edit if sym == :edit
       end
-      redirect_to recipe_path(@comment.recipe)
     end
 
     def set_comment
-      @comment = Comment.find(params[:id])
+      if Comment.exists?(params[:id])
+        @comment = Comment.find(params[:id])
+      else
+        flash[:alert] = "Comment does not exist"
+        home_redirect
+      end
     end
 
 end

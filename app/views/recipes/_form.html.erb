@@ -1,6 +1,6 @@
 <h1>Recipe Form</h1>
 
-<%= render partial: 'recipes/errors', locals:{recipe: @recipe}%>
+<%= render partial: 'layouts/errors', locals:{obj: @recipe}%>
 
 <%= form_for(@recipe) do |f|%>
   <%= f.label :name %> <br>

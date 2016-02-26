@@ -1,7 +1,9 @@
-<%=form_for(Comment.new) do |f| %>
-  <%=f.label :content%><br>
-  <%=f.text_area :content, rows: 8, cols:50%><br>
-  <%=f.hidden_field :user_id, value: current_user.id%>
-  <%=f.hidden_field :recipe_id, value: @recipe.id%>
-  <%=f.submit "Submit"%>
-<%end%>
+<div>
+  <%=form_for(@comment) do |f| %>
+    <%=f.label :content%><br>
+    <%=f.text_area :content, rows: 8, cols:50%><br>
+    <%=f.hidden_field :user_id, value: current_user.id if !@comment.user%>
+    <%=f.hidden_field :recipe_id, value: @recipe.id if !@comment.recipe %>
+    <%=f.submit "Submit"%> 
+  <%end%>
+</div>

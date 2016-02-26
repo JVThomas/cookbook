@@ -3,11 +3,11 @@ class Comment < ActiveRecord::Base
   belongs_to :recipe
   validates :content, presence: true
 
-  def comment_recipe_name
-    comment.recipe.name
+  def recipe_name
+    recipe.name
   end
 
-  def comment_user_email
-    comment.user.email
+  def user_email
+    user.email
   end
 end

@@ -22,6 +22,10 @@
   <% @recipe.comments.each do |comment| %>
     <h3> <%= comment.user.email %> Says: </h3>
     <h4> <%= comment.content %> </h4>
+    <%if comment.user == current_user%>
+      <%= link_to "Edit Comment", edit_user_comment_path(comment.user, comment)%>
+      <%= link_to "Delete Comment", user_comment_path(comment.user,comment), method: :delete%>
+    <%end%>
   <%end%>
 </div>
 

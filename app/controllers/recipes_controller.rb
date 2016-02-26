@@ -29,6 +29,7 @@ class RecipesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     if !!@user && @user.id != @recipe.user.id
       flash[:alert] = "Recipe does not belong to specified user"
       home_redirect
