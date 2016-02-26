@@ -2,10 +2,10 @@
 
 <div>
   <h2>Want to search all recipes by ingredient? Enter the ingredient name below</h2>
-  <%=form_tag search_path do%>
+  <%=form_tag recipes_path, method: :get do%>
     <%=label_tag :ingredient_name%>
-    <%=text_field_tag :ingredient_name%>
-    <%=submit_tag "Search"%>
+    <%=text_field_tag :ingredient_name, params[:ingredient_name]%>
+    <%=submit_tag "Search", name: :search%>
   <%end%>
 </div>
 
