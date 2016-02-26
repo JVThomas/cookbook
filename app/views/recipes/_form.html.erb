@@ -11,13 +11,12 @@
   </div>
 <%end%>
 
+
 <%= form_for(@recipe) do |f|%>
   <%= f.label :name %> <br>
   <%= f.text_field :name%><br>
 
-<!--Display all build ingredients here, add a checkbox to remove that ingredient 
-Display by collecting @recipe.recipe_ingredients and list them here
-Add new recipe_ingredient for @recipe, render new or edit for the blank-->
+
   <%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
     <h5><%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h5>
   <%end%>
@@ -28,10 +27,25 @@ Add new recipe_ingredient for @recipe, render new or edit for the blank-->
 
   <h3>Add Ingredient</h3>
   <%=f.fields_for :recipe_ingredients do |i| %>
-    <%=i.label "Ingredient name:" %> 
-    <%=i.text_field :ingredient_name %> <br><br>
-    <%=i.label "Quantity:"%> 
-    <%=i.number_field :ingredient_quantity%> <br><BR>
+    
+    <%if !!@recipe.errors[:ingredient_name]%>
+      <div class = "field-with-errors">
+    <%else%>
+      <div>
+    <%end%>
+        <%=i.label "Ingredient name:" %> 
+        <%=i.text_field :ingredient_name %> <br><br>
+      </div>
+
+    <%if !!@recipe.errors[:ingredient_quantity]%>
+      <div class = "field-with-errors">
+    <%else%>
+      <div>
+    <%end%>
+        <%=i.label "Quantity:"%> 
+        <%=i.number_field :ingredient_quantity%><br><br>
+      </div>
+  
   <%end%>
 
   <%= f.submit "Add Ingredient", name: :add_ingredient%>

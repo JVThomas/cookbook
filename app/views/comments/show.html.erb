@@ -1,6 +1,8 @@
-<h1><%=@comment.user.email%> says:</h1>
-<h2><%=@comment.content%></h2>
-<%if @comment.user == current_user%>
-  <%= link_to "Edit Comment", edit_user_comment_path(@comment.user, @comment)%>
-  <%= link_to "Delete Comment", user_comment_path(@comment.user,@comment), method: :delete%>
-<%end%>
+<div>
+  <h1><%=@comment.user.email%> says:</h1>
+  <h2><%=@comment.content%></h2>
+  <%if @comment.user == current_user%>
+    <%= link_to "Edit Comment", edit_user_comment_path(@comment.user, @comment)%>
+    <%= link_to "Delete Comment", user_comment_path(@comment.user,@comment), method: :delete%>
+  <%end%>
+</div>
