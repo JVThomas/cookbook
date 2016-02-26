@@ -1,4 +1,4 @@
-<%=form_for(@recipe.comments.build) do |f| %>
+<%=form_for(Comment.new) do |f| %>
   <%=f.label :content%><br>
   <%=f.text_area :content, rows: 8, cols:50%><br>
   <%=f.hidden_field :user_id, value: current_user.id%>

@@ -61,7 +61,7 @@ class RecipesController < ApplicationController
       redirect_to :back
     else
       @recipes = Recipe.search_by_ingredient(params[:ingredient_name])
-      flash[:notice] = "Search successfully completed. #{@recipes.length} results found"
+      flash[:notice] = "Search successfully completed. #{@recipes.length} result(s) found"
       render :index
     end
   end
@@ -90,9 +90,10 @@ class RecipesController < ApplicationController
 
     def recipe_save(sym)
       if !@recipe.user || @recipe.user == current_user
+        @recipe.update(recipe_params) if sym == :edit
         if @recipe.valid?
-          @recipe.save
-          flash[:notice] = "Recipe successfully submitted"
+          @recipe.save if sym == :new
+          flash[:notice] = "Recipe successfully submited"
           redirect_to recipe_path(@recipe)
         else
           render sym
@@ -102,14 +103,4 @@ class RecipesController < ApplicationController
         redirect_to user_path(current_user)
       end
     end
-
-    def params_check
-      if !!params[:user_id]
-        if params[:user_id].to_i != current_user.id
-          flash[:alert] = "You are not authorized to do that"
-          redirect_to user_path(current_user)
-        end
-      end
-    end
-
 end

@@ -1,0 +1,8 @@
+<h1><%=@user.email%> Comments</h1>
+
+<div>
+  <%@comments.each do |comment|%>
+    <h2><%=link_to "#{comment.recipe_name}", recipe_path(@comment.recipe)%></h2>
+    <h3><%=link_to "#{comment.content}", user_comment_path(@comment.user, @comment)%></h3><br>
+  <%end%>
+</div>

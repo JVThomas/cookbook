@@ -52,4 +52,13 @@ class ApplicationController < ActionController::Base
         end
       end
     end
+
+    def params_check
+      if !!params[:user_id]
+        if params[:user_id].to_i != current_user.id
+          flash[:alert] = "You are not authorized to perform that action"
+          redirect_to user_path(current_user)
+        end
+      end
+    end
 end

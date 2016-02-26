@@ -12,8 +12,8 @@
   <%end%>
 
   <% if @recipe.user == current_user%>
-    <%= link_to "Edit Recipe", edit_recipe_path(@recipe)%>
-    <%= link_to "Delete Recipe", recipe_path(@recipe), method: :delete%>
+    <%= link_to "Edit Recipe", edit_user_recipe_path(current_user,@recipe) if @recipe.user == current_user%>
+    <%= link_to "Delete Recipe", user_recipe_path(current_user, @recipe), method: :delete if @recipe.user == current_user%>
   <%end%>
 </div>
 
