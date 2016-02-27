@@ -23,7 +23,7 @@ class CommentsController < ApplicationController
   end
 
   def show
-    if params[:user_id].to_i != @comment.user.id
+    if !!@user && @user.id != @comment.user.id
       flash[:alert] = "Comment does not belong to specified user"
       home_redirect
     end
