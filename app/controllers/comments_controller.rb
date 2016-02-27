@@ -47,7 +47,7 @@ class CommentsController < ApplicationController
       if @comment.valid?
         @comment.save if sym == :new
         flash[:notice] = "Comment successfully saved"
-        redirect_to user_comments_path(current_user)
+        redirect_to recipe_path(@comment.recipe)
       else
         flash[:alert] = "Comment must be filled in" if sym == :new 
         redirect_to recipe_path(@comment.recipe) if sym == :new

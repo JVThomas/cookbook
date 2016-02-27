@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :comments, only:[:create, :update]
   resources :recipe_ingredients, only:[:create, :destroy]
   
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", registrations: 'registrations' }
 
   resources :users, only:[:show] do
     resources :recipes

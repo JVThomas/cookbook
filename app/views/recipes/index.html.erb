@@ -1,13 +1,15 @@
 <h1><%= display_header(@user) %></h1>
 
-<div>
-  <h2>Want to search all recipes by ingredient? Enter the ingredient name below</h2>
-  <%=form_tag recipes_path, method: :get do%>
-    <%=label_tag :ingredient_name%>
-    <%=text_field_tag :ingredient_name, params[:ingredient_name]%>
-    <%=submit_tag "Search", name: :search%>
-  <%end%>
-</div>
+<%if !@user%>
+  <div>
+    <h2>Want to search all recipes by ingredient? Enter the ingredient name below</h2>
+    <%=form_tag recipes_path, method: :get do%>
+      <%=label_tag :ingredient_name%>
+      <%=text_field_tag :ingredient_name, params[:ingredient_name]%>
+      <%=submit_tag "Search", name: :search%>
+    <%end%>
+  </div>
+<%end%>
 
 <div>
   <%@recipes.each do |recipe| %>

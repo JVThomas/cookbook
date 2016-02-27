@@ -7,7 +7,7 @@ class Comment < ActiveRecord::Base
     recipe.name
   end
 
-  def user_email
-    user.email
+  def user_name
+    user.name
   end
 end

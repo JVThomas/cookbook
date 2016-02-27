@@ -9,7 +9,7 @@ module RecipesHelper
 
   def display_header(user)
     if !!@user
-      "#{@user.email} Recipes!"
+      "Recipes by #{@user.name}!"
     else
       "Recipes Index"
     end

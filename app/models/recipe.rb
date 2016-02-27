@@ -17,8 +17,8 @@ class Recipe < ActiveRecord::Base
     end
   end
 
-  def user_email
-    user.email
+  def user_name
+    user.name
   end
 
   def self.search_by_ingredient(name)

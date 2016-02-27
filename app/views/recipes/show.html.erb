@@ -1,6 +1,6 @@
 <div>
   <h1><%= @recipe.name%></h1>
-  <h3>By: <%=link_to "#{@recipe.user_email}", user_path(@recipe.user)%></h3>
+  <h3>By: <%=link_to "#{@recipe.user_name}", user_path(@recipe.user)%></h3>
 
   <h3>Instructions:</h3>
   <h4><%=@recipe.content%></h4>
@@ -20,7 +20,7 @@
 <div>
   <h1>Comments</h1>
   <% @recipe.comments.each do |comment| %>
-    <h3> <%= comment.user.email %> Says: </h3>
+    <h3> <%= comment.user_name %> Says: </h3>
     <h4> <%= comment.content %> </h4>
     <%if comment.user == current_user%>
       <%= link_to "Edit Comment", edit_user_comment_path(comment.user, comment)%>
