@@ -4,7 +4,8 @@ class CommentsController < ApplicationController
   before_action :set_comment, only:[:edit, :show, :destroy, :update]
   
   def create
-    @comment = current_user.comments.build(comment_params)
+    @comment = Comment.new(comment_params)
+    @comment.user = current_user
     comment_save(:new)
   end
 
