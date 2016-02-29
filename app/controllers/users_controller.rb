@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     if User.exists?(params[:id])
       @user = User.find(params[:id])
     else
-      flash[:alet] = "User does not exist"
+      flash[:alert] = "User does not exist"
       home_redirect
     end
   end

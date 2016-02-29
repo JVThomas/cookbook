@@ -18,8 +18,8 @@
   <h3>Add Ingredient</h3>
   <%=f.fields_for :recipe_ingredients do |i| %>
     
-    <%if !!@recipe.errors[:ingredient_name]%>
-      <div class = "field-with-errors">
+    <%if !@recipe.errors[:ingredient_name].blank?%>
+      <div class = "field_with_errors">
     <%else%>
       <div>
     <%end%>
@@ -27,8 +27,8 @@
         <%=i.text_field :ingredient_name %> <br><br>
       </div>
 
-    <%if !!@recipe.errors[:ingredient_quantity]%>
-      <div class = "field-with-errors">
+    <%if !@recipe.errors[:ingredient_quantity].blank?%>
+      <div class = "field_with_errors">
     <%else%>
       <div>
     <%end%>

@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
   before_action :set_user, only:[:index,:show]
 
   def new
-    @recipe = Recipe.new
+    @recipe = Recipe.new  
   end
 
   def index
