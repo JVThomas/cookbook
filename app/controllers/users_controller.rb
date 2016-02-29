@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   
   def show
-    @user = User.find(params[:id])
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
+    else
+      flash[:alet] = "User does not exist"
+      home_redirect
+    end
   end
 
 end
