@@ -5,7 +5,6 @@ class RecipesController < ApplicationController
   before_action :set_user, only:[:index,:show]
 
   def new
-    params_check
     @recipe = Recipe.new
   end
 
@@ -20,9 +19,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    params_check
-    @recipe = Recipe.new(recipe_params)
-    @recipe.user = current_user
+    @recipe = current_user.recipes.build(recipe_params)
     if !!params[:add_ingredient]
       add_ingredient(:new)
     else

@@ -42,16 +42,14 @@ class ApplicationController < ActionController::Base
     end
 
     def set_user
+      @user = nil
       if !!params[:user_id]
-        id = params[:user_id]
-      else
-        id = params[:id]
-      end
-      if User.exists?(id)
-        @user = User.find(id)
-      else
-        flash[:alert] = "User does not exist"
-        home_redirect
+        if User.exists?(params[:user_id])
+          @user = User.find(params[:user_id])
+        else
+          flash[:alert] = "User does not exist"
+          home_redirect
+        end
       end
     end
 
