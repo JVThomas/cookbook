@@ -2,7 +2,7 @@
 
 <div>
   <%@comments.each do |comment|%>
-    <h2>Comment in recipe <%=link_to "#{comment.recipe_name}", recipe_path(comment.recipe)%>...</h2>
+    <h2><%=link_to "#{comment.recipe_name}", recipe_path(comment.recipe)%></h2>
     <h3><%=link_to "#{comment.content}", user_comment_path(comment.user, comment)%></h3><br>
   <%end%>
 </div>

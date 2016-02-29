@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
 
   has_many :recipes
   has_many :comments
-  validates :name, presence: true
 
   def self.from_omniauth(auth)
     where(uid: auth.uid).first_or_create do |user|
