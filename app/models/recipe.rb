@@ -2,7 +2,7 @@ class Recipe < ActiveRecord::Base
   belongs_to :user
   has_many :recipe_ingredients, dependent: :destroy
   has_many :ingredients, through: :recipe_ingredients
-  has_many :comments
+  has_many :comments, dependent: :destroy
   
   validates :content, presence: true
   validates :name, presence: true
