@@ -8,7 +8,7 @@
   <h3>Ingredients</h3>
 
   <%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
-      <h4><%=recipe_ingredient.ingredient_name %>: <%=recipe_ingredient.quantity%></h4>
+      <h3><%=recipe_ingredient.ingredient_name %>: <%=recipe_ingredient.quantity%></h3>
   <%end%>
 
   <% if @recipe.user == current_user%>
