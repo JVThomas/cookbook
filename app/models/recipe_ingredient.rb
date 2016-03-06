@@ -4,6 +4,12 @@ class RecipeIngredient < ActiveRecord::Base
   validates :quantity, presence: true
 
   def ingredient_name
-    Ingredient.find(self.ingredient_id).name
+    # Ingredient.find(self.ingredient_id).name
+    self.ingredient.name if self.ingredient
   end
+
+  def ingredient_quantity
+    quanity
+  end
+
 end

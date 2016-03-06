@@ -7,13 +7,23 @@ class Recipe < ActiveRecord::Base
   validates :content, presence: true
   validates :name, presence: true
 
-  def add_ingredient(attributes)
-    attributes.each do |key,value|
-      errors.add(key, "must be filled in") if value.blank?
+  # fields_for recipe_ingredients
+  def recipe_ingredients_attributes=(attributes)
+    attributes.each do |num,hash|
+      hash.each do |attribute, value|
+        errors.add(attribute, "must be filled in") if value.blank? && errors[attribute].empty?
+      end
     end
     if !errors.any?
-      @ingredient = Ingredient.find_or_create_by(name:(attributes[:ingredient_name].downcase.titlecase))
-      self.recipe_ingredients.build(ingredient_id: @ingredient.id, quantity: attributes[:ingredient_quantity]).save
+      attributes.each do |i,attribute|
+        @ingredient = Ingredient.find_or_create_by(name: attribute[:ingredient_name].downcase.titlecase)
+        if self.recipe_ingredients[i.to_i].nil?
+          @recipe_ingredient = self.recipe_ingredients.build(quantity: attribute[:quantity])
+          @recipe_ingredient.ingredient = @ingredient
+        else
+          self.recipe_ingredients[i.to_i].update(ingredient_id: @ingredient.id)
+        end
+      end
     end
   end
 

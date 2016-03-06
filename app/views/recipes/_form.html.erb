@@ -27,17 +27,15 @@
         <%=i.text_field :ingredient_name %> <br><br>
       </div>
 
-    <%if !@recipe.errors[:ingredient_quantity].blank?%>
+    <%if !@recipe.errors[:quantity].blank?%>
       <div class = "field_with_errors">
     <%else%>
       <div>
     <%end%>
         <%=i.label "Quantity:"%> 
-        <%=i.number_field :ingredient_quantity%><br><br>
+        <%=i.number_field :quantity%><br><br>
       </div>
-  
   <%end%>
 
-  <%= f.submit "Add Ingredient", name: :add_ingredient%>
   <%=f.submit "Save Recipe"%>
 <% end%>

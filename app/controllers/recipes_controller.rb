@@ -6,8 +6,11 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new  
+    3.times do
+      @recipe.recipe_ingredients.build
+    end
   end
-
+  
   def index
     if !!params[:search]
       ingredient_search
@@ -20,10 +23,15 @@ class RecipesController < ApplicationController
 
   def create
     @recipe = current_user.recipes.build(recipe_params)
-    if !!params[:add_ingredient]
-      add_ingredient(:new)
+    if !@recipe.errors.any? && @recipe.save 
+      flash[:notice] = "Recipe successfully submited"
+      redirect_to @recipe
     else
-      recipe_save(:new)
+     @recipe.recipe_ingredients = []
+      3.times do
+        @recipe.recipe_ingredients.build
+      end
+      render :new
     end
   end
 
@@ -41,10 +49,12 @@ class RecipesController < ApplicationController
     
   def update
     authorize(@recipe)
-    if !!params[:add_ingredient]
-      add_ingredient(:edit)
+    @recipe.attributes = recipe_params
+    if !@recipe.errors.any? && @recipe.update(recipe_params)
+      flash[:notice] = "Recipe successfully submited"
+      redirect_to @recipe
     else
-      recipe_save(:edit)
+      render :edit
     end
   end
 
@@ -58,7 +68,7 @@ class RecipesController < ApplicationController
   private
 
     def recipe_params
-      params.require(:recipe).permit(:name, :content)
+      params.require(:recipe).permit(:name, :content, :recipe_ingredients_attributes => [:ingredient_name, :quantity])
     end
 
     def set_recipe
