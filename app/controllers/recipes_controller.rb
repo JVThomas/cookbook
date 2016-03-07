@@ -28,7 +28,7 @@ class RecipesController < ApplicationController
       redirect_to @recipe
     else
      #had to do this to maintain consistency of fields. 
-     #Depending on user input, either no fields or an addiional 3 fields were added
+     #Depending on user input, either no fields or an addiional 3 fields were added without this block
      @recipe.recipe_ingredients = [] 
       3.times do
         @recipe.recipe_ingredients.build

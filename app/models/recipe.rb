@@ -9,11 +9,7 @@ class Recipe < ActiveRecord::Base
 
   # fields_for recipe_ingredients
   def recipe_ingredients_attributes=(attributes)
-    attributes.each do |num,hash|
-      hash.each do |attribute, value|
-        errors.add(attribute, "must be filled in") if value.blank? && errors[attribute].empty?
-      end
-    end
+    valid_attributes(attributes)
     if !errors.any?
       attributes.each do |i,attribute|
         @ingredient = Ingredient.find_or_create_by(name: attribute[:ingredient_name].downcase.titlecase)
@@ -22,6 +18,14 @@ class Recipe < ActiveRecord::Base
         else
           self.recipe_ingredients[i.to_i].update(ingredient_id: @ingredient.id)
         end
+      end
+    end
+  end
+
+  def valid_attributes(attributes)
+    attributes.each do |num,hash|
+      hash.each do |attribute, value|
+        errors.add(attribute, "must be filled in") if value.blank? && errors[attribute].empty?
       end
     end
   end
