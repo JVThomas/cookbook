@@ -8,7 +8,7 @@
 
 
   <%@recipe.recipe_ingredients.each do |recipe_ingredient|%>
-    <h5><%=recipe_ingredient.ingredient_name %>    Quantity: <%=recipe_ingredient.quantity%></h5>
+    <h5><%=recipe_ingredient.ingredient_name %>       <%="Quantity: " + recipe_ingredient.quantity.to_s if !recipe_ingredient.ingredient_name.blank?%></h5>
   <%end%>
 
   <h3>Instructions:</h3>
@@ -36,6 +36,5 @@
         <%=i.number_field :quantity%><br><br>
       </div>
   <%end%>
-
   <%=f.submit "Save Recipe"%>
 <% end%>

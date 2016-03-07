@@ -80,28 +80,6 @@ class RecipesController < ApplicationController
       end
     end
 
-    def add_ingredient(sym)
-      @recipe.add_ingredient(params[:recipe][:recipe_ingredients])
-      flash[:notice] = "Ingredient has been added" if !@recipe.errors.any?
-      render sym
-    end
-
-    def recipe_save(sym)
-      if @recipe.user == current_user
-        @recipe.update(recipe_params) if sym == :edit
-        if @recipe.valid?
-          @recipe.save if sym == :new
-          flash[:notice] = "Recipe successfully submited"
-          redirect_to recipe_path(@recipe)
-        else
-          render sym
-        end
-      else
-        flash[:alert] = "Users can only save their own recipes"
-        redirect_to user_path(current_user)
-      end
-    end
-
     def ingredient_search
       if params[:ingredient_name].blank?
         flash[:alert] = "Search field empty. Returned to previous page"
