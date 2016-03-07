@@ -18,8 +18,7 @@ class Recipe < ActiveRecord::Base
       attributes.each do |i,attribute|
         @ingredient = Ingredient.find_or_create_by(name: attribute[:ingredient_name].downcase.titlecase)
         if self.recipe_ingredients[i.to_i].nil?
-          @recipe_ingredient = self.recipe_ingredients.build(quantity: attribute[:quantity])
-          @recipe_ingredient.ingredient = @ingredient
+          @recipe_ingredient = self.recipe_ingredients.build(quantity: attribute[:quantity], ingredient_id: @ingredient.id)
         else
           self.recipe_ingredients[i.to_i].update(ingredient_id: @ingredient.id)
         end

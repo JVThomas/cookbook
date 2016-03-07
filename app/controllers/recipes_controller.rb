@@ -27,7 +27,9 @@ class RecipesController < ApplicationController
       flash[:notice] = "Recipe successfully submited"
       redirect_to @recipe
     else
-     @recipe.recipe_ingredients = []
+     #had to do this to maintain consistency of fields. 
+     #Depending on user input, either no fields or an addiional 3 fields were added
+     @recipe.recipe_ingredients = [] 
       3.times do
         @recipe.recipe_ingredients.build
       end
